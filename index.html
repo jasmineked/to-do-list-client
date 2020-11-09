@@ -15,7 +15,7 @@
       <h1>organize your life</h1>
       <p>you imbecile</p>
       <p id='message'></p>
-      <form id='sign up'>
+      <form id='sign-up'>
 <input type='text' name='credentials[email]' placeholder='email'>
 <input type='password' name='credentials[password]' placeholder='password'>
 <input type='password' name='credentials[password_confirmation]' placeholder='confirm password'>
@@ -32,6 +32,45 @@
 <input type='password' name='password[old]' placeholder='old password'>
 <input type='password' name='password[new]' placeholder='new password'>
 <input type='password' name='password[new]' placeholder='confirm password'>
+<input type='submit' value='confirm'>      
+</form>
+
+      <form id='create-task' class='border'>
+        <fieldset>
+          <legend> always something that needs to get done, amirite</legend>
+          <input type='text' name='task[text]' placeholder='enter task here'>
+           <input type='date' name='task[datedue]' placeholder='expected completion date'>
+           <input type='submit' value='another one'>
+        </fieldset>
+      </form>
+
+      <form id='index-task' class='border'>
+        <fieldset>
+           <input type='submit' value='view all tasks'>
+        </fieldset>
+      </form>
+
+      <form id='delete-task' class='border'>
+        <fieldset>
+         <input type='text' name='task[id]' placeholder='enter task id'>
+          <input type='submit' value='delete task'>
+        </fieldset>
+      </form>
+
+      <form id='show-task' class='border'>
+        <fieldset>
+          <input type='text' name='task[id]' placeholder='enter task ID'>
+          <input type='submit' value='find task'>
+        </fieldset>
+      </form>
+
+      <form id='update-task' class='border'>
+        <fieldset>
+          <input type='text' name='task[id]' placeholder='enter task id'>
+          <input type='text' name='task[title]' placeholder='enter task'>
+          <input type='text' name='task[date]' placeholder='enter date due'>
+          <input type='submit' value='update task'>
+        </fieldset>
       </form>
 
       <form id='sign-out'>
