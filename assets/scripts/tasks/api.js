@@ -16,7 +16,7 @@ const index = function () {
 
 const show = function (task) {
   return $.ajax({
-    url: config.apiUrl + '/tasks/' + task.id,
+    url: config.apiUrl + '/tasks/' + task._id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -24,12 +24,12 @@ const show = function (task) {
   })
 }
 
-const destroy = function (id) {
+const destroy = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/tasks/' + id,
+    url: config.apiUrl + '/tasks/' + data.task._id,
     method: 'DELETE',
     headers: {
-      Authorization: 'Bearer ' + store.token.user
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }

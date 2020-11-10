@@ -4,61 +4,61 @@ const store = require('../store')
 
 // the following are success & failure handler functions
 const signUpSuccess = function (data) {
-  $('#message').text('Welcome')
-  $('#message').removeClass()
-  $('#message').addClass('Success')
+  $('#message').text('Welcome', data.user.email)
+  $('#sign-up').hide()
+  // $('#sign-up')[0].reset()
+  $('form').trigger('reset')
   console.log('signUpSuccess ran. Data is: ', data)
 }
 
 const signUpFailure = function (error) {
   $('#message').text('Error on sign up')
-  $('#message').removeClass()
-  $('#message').addClass('Failure')
   console.error('signUpFailure ran. Error is:', error)
 }
 
 const signInSuccess = function (data) {
-  $('#message').text('Welcome back')
-  $('#message').removeClass()
-  $('#message').addClass('Success')
-  console.log('signInSuccess ran. Data is:', data)
+  // $('#sign-up')[0].reset()
+  // $('form').trigger('reset')
   store.user = data.user
+  $('#message').text('Welcome back', data.user.email)
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#change-pw').show()
+  $('#sign-out').show()
+  console.log('signInSuccess ran. Data is:', data)
 }
-const signInFailure = function (res) {
+const signInFailure = function (data) {
   $('#message').text('Error on sign in')
-  $('#message').removeClass()
-  $('#message').addClass('Failure')
-  console.error('signInFailure ran. Error is:', res)
+  console.error('signInFailure ran. Error is:', data)
 }
 
 const signOutSuccess = function () {
   $('#message').text('See you soon')
-  $('#message').removeClass()
-  $('#message').addClass('Success')
-  $('form').trigger('reset')
+  // $('#sign-out').[0].reset()
+  $('#change-pw').hide()
+  $('#sign-out').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
+  // $('form').trigger('reset')
   console.log('signOutSuccess ran. No return.')
   store.user = null
 }
 
-const signOutFailure = function (res) {
+const signOutFailure = function (error) {
   $('#message').text('Guess you\'re stuck with us...')
-  $('#message').removeClass()
-  $('#message').addClass('Success')
-  console.log('signOutFailure ran. Error is:', res)
+  console.log('signOutFailure ran. Error is:', error)
 }
 
-const changePasswordSuccess = function () {
+const changePwSuccess = function (data) {
   $('#message').text('Hope you wrote that one down!')
-  $('#message').removeClass()
-  $('#message').addClass('Success')
+  // $('#form').trigger('reset')
+  // $('#change-pw')[0].reset()
   console.log('changePwSuccess ran. No return')
 }
 
-const changePasswordFailure = function (error) {
+const changePwFailure = function (error) {
   $('#message').text('Error on change password')
-  $('#message').removeClass()
-  $('#message').addClass('Failure')
-  console.error('changePasswordFailure ran. Error is:', error)
+  console.error('changePwFailure ran. Error is:', error)
 }
 
 module.exports = {
@@ -68,6 +68,6 @@ module.exports = {
   signInFailure,
   signOutSuccess,
   signOutFailure,
-  changePasswordSuccess,
-  changePasswordFailure
+  changePwSuccess,
+  changePwFailure
 }

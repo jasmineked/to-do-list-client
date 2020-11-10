@@ -50,6 +50,7 @@ const onUpdateTask = function (event) {
 const onCreateTask = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   api.create(data)
     .then(ui.onCreateSuccess)
     .catch(ui.onCreateFailure)
