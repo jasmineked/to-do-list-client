@@ -30,9 +30,8 @@ const onIndexFailure = function (error) {
 
 const onShowSuccess = function (data) {
   $('#message').text('Selected task displayed')
-  $('#message').removeClass()
-  $('#message').addClass('Success')
-  console.log('onCreateSuccess ran. Data is:', data)
+  $('#message').text(data.task.text)
+  console.log('onShowSuccess ran. Data is:', data)
 }
 
 const onShowFailure = function (error) {

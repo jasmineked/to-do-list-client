@@ -14,9 +14,9 @@ const index = function () {
   })
 }
 
-const show = function (task) {
+const show = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/tasks/' + task._id,
+    url: config.apiUrl + '/tasks/' + data.task._id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token

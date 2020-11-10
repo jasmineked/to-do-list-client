@@ -14,16 +14,11 @@ const onIndexTask = function () {
 }
 
 const onShowTask = function (event) {
-  // prevent default submit action to stop the page from refreshing
   event.preventDefault()
-  // create a JS object from the form where the user entered the task id
   const data = getFormFields(event.target)
-  // make API call for getting one task with the data we grabbed from the form
+  console.log(data)
   api.show(data)
-  // if the apiData is successful then pass the data to the onShowSuccess
-  // function
     .then(ui.onShowSuccess)
-  // if the API call fails then run our onError function
     .catch(ui.onShowFailure)
 }
 

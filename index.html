@@ -35,18 +35,15 @@
 <input type='submit' value='confirm'>
 </form>
 
-      <form id='create-task' class='border'>
-        <fieldset>
-          <legend> always something that needs to get done, amirite</legend>
-          <input type='text' name='task[text]' placeholder='enter task here'>
-           <input type='date' name='dateDue[date]' placeholder='expected completion date'>
-           <input type='submit' value='another one'>
-        </fieldset>
+      <form id="create-task">
+        <input name="task[text]" type="text">
+        <input name="task[dueDate]" type="date">
+        <button type="submit">Create Task</button>
       </form>
 
       <form id='index-task' class='border'>
         <fieldset>
-           <input type='submit' value='view all tasks'>
+           <input type='button' name='task' value='view all tasks'>
         </fieldset>
       </form>
 
@@ -59,8 +56,8 @@
 
       <form id='show-task' class='border'>
         <fieldset>
-          <input type='text' name='task[id]' placeholder='enter task ID'>
-          <input type='submit' value='find task'>
+        <input name='task[_id]' type='text' placeholder='search task'>
+        <button type='submit'>search</button>
         </fieldset>
       </form>
 
