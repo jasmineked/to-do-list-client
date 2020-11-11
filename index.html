@@ -12,38 +12,39 @@
       <script src='public/application.js' type='text/javascript' charset='utf-8' defer></script>
     </head>
     <body>
-      <h1>organize your life</h1>
-      <p>you imbecile</p>
+      <h1>marie kondo your life</h1>
+      <p>with me</p>
       <p id='message'></p>
       <form id='sign-up'>
 <input type='text' name='credentials[email]' placeholder='email'>
 <input type='password' name='credentials[password]' placeholder='password'>
 <input type='password' name='credentials[password_confirmation]' placeholder='confirm password'>
-<input type='submit' value='sign up'>
-      </form>
+<input type='submit' value='sign-up'>
+</form>
+<button id='sign-up-button' type='button'>sign up</button>
 
-      <form id='sign-in'>
+<form id='sign-in'>
         <input type= 'text' name='credentials[email]' placeholder='email'>
         <input type='text' name='credentials[password]' placeholder='password'>
         <input type='submit' value='sign in'>
       </form>
+      <button id='sign-in-button' type='button'>sign in</button>
 
-      <form id='change-pw'>
+<form id='change-pw'>
 <input type='password' name='passwords[old]' placeholder='old password'>
 <input type='password' name='passwords[new]' placeholder='new password'>
 <input type='password' name='passwords[new]' placeholder='confirm password'>
 <input type='submit' value='confirm'>
 </form>
+<button id='change-pw-button' type='button'>change password</button>
 
       <form id='create-task'>
         <input name='task[text]' type='text'>
         <input name='task[duedate]' type='date'>
-        <button type='submit'>Create Task</button>
-      </form>
+        </form>
+        <button id='create-task-button' type='submit'>Create Task</button>
 
-      <form id='index-task' class='border'>
-           <input name='task' type='button' value='view all tasks'>
-      </form>
+      <button id='index-task-button' name='task'>view all tasks</button>
 
       <form id='delete-task' class='border'>
         <fieldset>
@@ -53,11 +54,10 @@
       </form>
 
       <form id='show-task' class='border'>
-        <fieldset>
         <input name='task[_id]' type='text' placeholder='search task'>
-        <button type='submit'>search</button>
-        </fieldset>
+        <input type='submit' value='show task'>
       </form>
+      <button id ='show-task-button' type='submit'>search</button>
 
       <form id='update-task' class='border'>
         <fieldset>
@@ -68,8 +68,8 @@
         </fieldset>
       </form>
 
-      <form id='sign-out'>
-        <input type='submit' value='bye witches!'>
+          <button id='sign-out' type='submit'>sign out</button>
+
       </form>
     </body>
 </html>
