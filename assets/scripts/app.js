@@ -12,7 +12,7 @@ const taskEvents = require('./tasks/events')
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
-  $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#sign-out').on('click', authEvents.onSignOut)
   $('#change-pw').on('submit', authEvents.onChangePw)
   $('#index-task').on('click', taskEvents.onIndexTask)
   $('#show-task').on('submit', taskEvents.onShowTask)
@@ -46,6 +46,16 @@ $(() => {
   $('#sign-in').show()
   $('#sign-in-button').hide()
   $('#sign-up-button').hide()
+  })
+
+  $('#sign-out').click(function (){
+    $('#sign-up-button').hide()
+    $('#sign-in-button').hide()
+    $('#change-pw-button').hide()
+    $('#index-task-button').hide()
+    $('#create-task-button').hide()
+    $('#show-task-button').hide()
+
   })
 
 

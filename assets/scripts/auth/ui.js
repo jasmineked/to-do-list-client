@@ -48,7 +48,6 @@ const signInFailure = function (data) {
 const signOutSuccess = function () {
   $('form').trigger('reset')
   $('#message').text('See you soon')
-  $('#change-pw').hide()
   $('#sign-out').hide()
   $('#sign-up-button').show()
   $('#sign-in-button').show()
@@ -63,6 +62,7 @@ const signOutFailure = function (error) {
 const changePwSuccess = function (data) {
   $('#message').text('Hope you wrote that one down!')
   $('#form').trigger('reset')
+  $('#change-pw').hide()
 }
 
 const changePwFailure = function (error) {
