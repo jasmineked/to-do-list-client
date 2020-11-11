@@ -9,7 +9,7 @@ const index = function () {
     url: config.apiUrl + '/tasks',
     method: 'GET',
     headers: {
-      Authorization: 'Bearer ' + store.token.user
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }

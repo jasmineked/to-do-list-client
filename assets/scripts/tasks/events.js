@@ -5,11 +5,9 @@ const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onIndexTask = function () {
-  // make API call to get all of the tasks
+  event.preventDefault()
   api.index()
-  // if API call us successful then pass the data to the onIndexSuccess function
     .then(ui.onIndexSuccess)
-  // if API call fails then run our onError function
     .catch(ui.onIndexFailure)
 }
 

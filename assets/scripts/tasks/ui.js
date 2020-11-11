@@ -1,4 +1,5 @@
 'use strict'
+//const task = require('../store')
 
 const onCreateSuccess = function (data) {
   $('#message').text('Task successfully created')
@@ -14,15 +15,23 @@ const onCreateFailure = function (error) {
   console.error('onCreateFailure ran. Error is:', error)
 }
 
-const onIndexSuccess = function (data) {
-  $('#message').text('All tasks successfully received')
-  $('#message').removeClass()
-  $('#message').addClass('Success')
-  console.log('onIndexSuccess ran. Data is:', data.Tasks)
+const onIndexSuccess = function (responseData) {
+    console.log(responseData)
+
+    $('#message').html('')
+
+  responseData.tasks.forEach(tasks => {
+    const taskList = (`
+      <p>Task: ${tasks.text}</p>
+      <p>Due Date: ${tasks.dueDate}</p>
+  `)
+  $('#message').append(taskList)
+
+})
 }
 
 const onIndexFailure = function (error) {
-  $('#message').text('All tasks successfully displayed')
+  $('#message').text('try again')
   $('#message').removeClass()
   $('#message').addClass('Failure')
   console.log('onIndexFailure ran. Error is:', error)
@@ -30,7 +39,7 @@ const onIndexFailure = function (error) {
 
 const onShowSuccess = function (data) {
   $('#message').text('Selected task displayed')
-  $('#message').text(data.task.text)
+  //$('#message').text(data.task.text)
   console.log('onShowSuccess ran. Data is:', data)
 }
 
