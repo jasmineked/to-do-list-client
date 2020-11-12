@@ -3930,7 +3930,7 @@ module.exports = getFormFields;
 
 var apiUrl = void 0;
 var apiUrls = {
-  production: '<replace-with-heroku-url>',
+  production: 'https://rocky-harbor-89349.herokuapp.com/',
   development: 'http://localhost:4741'
 };
 
