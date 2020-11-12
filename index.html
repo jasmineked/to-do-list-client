@@ -12,63 +12,96 @@
       <script src='public/application.js' type='text/javascript' charset='utf-8' defer></script>
     </head>
     <body>
-      <h1>marie kondo your life</h1>
-      <p>with me</p>
+      <div class='container'>
+      <h1>essence.</h1>
+      <h4>/ˈesəns/</h4>
+      <p>own every moment.</p>
+
+<div class='container'>
       <p id='message'></p>
-      <form id='sign-up'>
-<input type='text' name='credentials[email]' placeholder='email'>
-<input type='password' name='credentials[password]' placeholder='password'>
-<input type='password' name='credentials[password_confirmation]' placeholder='confirm password'>
-<input type='submit' value='sign-up'>
+    </div>
+
+<div class='container'>
+<button id='sign-up-button' class= 'btn btn-primary' type='button'>start today</button>
+<button id='sign-in-button' class= 'btn btn-primary' type='button'>sign in</button>
+<button id='change-pw-button' class= 'btn btn-primary' type='button'>change password</button>
+<button id='create-task-button' class= 'btn btn-primary' type='submit'>create</button>
+<button id='index-task' class= 'btn btn-primary' type='submit'>view all </button>
+<button id='delete-task-button' class= 'btn btn-primary' type='submit'> delete</button>
+<button id ='show-task-button' class= 'btn btn-primary' type='submit'>search</button>
+<button id='update-task-button'class= 'btn btn-primary'  name ='update-task' type='submit'>update</button>
+<button id='sign-out' class= 'btn btn-primary' type='submit'>sign out</button>
+</div>
+<div class='container'>
+
+   <form id='sign-up'>
+     <div class='form-group'>
+   <input type='email' name='credentials[email]' class='form-control' placeholder='enter email'>
+ </div>
+<div class='form-group'>
+<input type='password' name='credentials[password]' class='form-control'   placeholder='password'>
+</div> <div class='form-group'>
+<input type='password' name='credentials[password_confirmation]' class='form-control'  placeholder='confirm password'>
+</div>
+<div class='form-group'>
+<input type='submit' class='form-control' value='sign-up'>
+</div>
+</div>
 </form>
-<button id='sign-up-button' type='button'>sign up</button>
 
 <form id='sign-in'>
-        <input type= 'text' name='credentials[email]' placeholder='email'>
-        <input type='text' name='credentials[password]' placeholder='password'>
-        <input type='submit' value='sign in'>
+  <div class='form-group'>
+        <input type= 'text' name='credentials[email]' class='form-control' placeholder='email'>
+      </div>
+        <div class='form-group'>
+        <input type='text' name='credentials[password]' class='form-control' placeholder='password'>
+      </div>
+        <div class='form-group'>
+        <input type='submit' class='form-control' value='sign in'>
+      </div>
       </form>
-      <button id='sign-in-button' type='button'>sign in</button>
 
+<div class='form-group'>
 <form id='change-pw'>
-<input type='password' name='passwords[old]' placeholder='old password'>
-<input type='password' name='passwords[new]' placeholder='new password'>
-<input type='password' name='passwords[new]' placeholder='confirm password'>
-<input type='submit' value='confirm'>
+<input type='password' name='passwords[old]' class='form-control' placeholder='old password'>
+<input type='password' name='passwords[new]'class='form-control' placeholder='new password'>
+<input type='password' name='passwords[new]' class='form-control' placeholder='confirm password'>
+<input type='submit' class='form-control' value='confirm'>
 </form>
-<button id='change-pw-button' type='button'>change password</button>
 
+<div class='form-group'>
       <form id='create-task'>
-        <input name='task[text]' type='text'>
-        <input name='task[dueDate]' type='date'>
-        <input type='submit' value='create task'>
+        <input name='task[text]'class='form-control' type='text'>
+        <input name='task[dueDate]' class='form-control' type='date'>
+        <input type='submit'class='form-control' value='create task'>
         </form>
+        <p id='id'></p>
+      </div>
 
-        <button id='create-task-button' type='submit'>Create Task</button>
-
-      <button id='index-task' type='submit'>view all tasks</button>
-
-      <form id='delete-task' class='border'>
-         <input type='text' name='task[_id]' placeholder='enter task id'>
-          <input type='submit' value='delete task'>
+<div class='form-group'>
+      <form id='delete-task'>
+         <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
+          <input type='submit' class='form-control' value='delete task'>
       </form>
-      <button id='delete-task-button' type='submit'> delete task</button>
+    </div>
 
-      <form id='show-task' class='border'>
-        <input name='task[_id]' type='text' placeholder='search task'>
-        <input type='submit' value='show task'>
+<div class='form-group'>
+      <form id='show-task'>
+        <input name='task[_id]' type='text' class='form-control' placeholder='search task'>
+        <input type='submit' class='form-control' value='show task'>
       </form>
-      <button id ='show-task-button' type='submit'>search</button>
+    </div>
 
-      <form id='update-task' class='border'>
-          <input type='text' name='task[_id]' placeholder='enter task id'>
-          <input type='text' name='task[text]' placeholder='enter task'>
-          <input type='text' name='task[duedate]' placeholder='enter date due'>
-          <button type='submit'>Update Task</button>
+<div class='form-group'>
+      <form id='update-task'>
+          <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
+          <input type='text' name='task[text]' class='form-control' placeholder='enter task'>
+          <input type='date' name='task[duedate]' class='form-control' placeholder='enter date due'>
+          <input type='submit' class='form-control' placeholder='update task'>
+        </div>
+
+      <div class='container' id='response-text'>
+      </div>
       </form>
-  <button id='update-task-button' name ='update-task' type='submit'>update task</button>
-
-          <button id='sign-out' type='submit'>sign out</button>
-
     </body>
 </html>

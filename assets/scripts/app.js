@@ -41,6 +41,9 @@ $(() => {
     $('#sign-up').show()
     $('#sign-in-button').hide()
     $('#sign-up-button').hide()
+    // $('#message').text('already joined?')
+    // $('#sign-in-button').hide()
+
   })
 
   $('#sign-in-button').click(function () {
@@ -49,21 +52,17 @@ $(() => {
     $('#sign-up-button').hide()
   })
 
-  $('#sign-out').click(function () {
-    $('#sign-up-button').hide()
-    $('#sign-in-button').hide()
-    $('#change-pw-button').hide()
-    $('#index-task').hide()
-    $('#create-task').hide()
-    $('#create-task-button').hide()
-    $('#show-task-button').hide()
-    $('#show-task').hide()
-    $('#delete-task').hide()
-    $('#delete-task-button').hide()
-  })
 
   $('#change-pw-button').click(function () {
     $('#change-pw').show()
+    $('#sign-up').hide()
+    $('#sign-in').hide()
+    $('#sign-out').show()
+    $('#index-task').show()
+    $('#show-task').hide()
+    $('#delete-task').hide()
+    $('#update-task').hide()
+    $('#create-task').hide()
   })
 
   // $('#index-task').click(function () {
@@ -73,18 +72,59 @@ $(() => {
   $('#create-task-button').click(function () {
     $('#create-task').show()
       $('#delete-task-button').show()
+      $('#change-pw').show()
+      $('#sign-up').hide()
+      $('#sign-in').hide()
+      $('#sign-out').show()
+      $('#change-pw').hide()
+      $('#index-task').show()
+      $('#show-task').hide()
+      $('#delete-task').hide()
+      $('#update-task').hide()
+      $('#response-text').trigger('reset')
+
   })
 
     $('#update-task-button').click(function () {
       $('#update-task').show()
+      $('#change-pw').show()
+      $('#index-task').show()
+      $('#sign-up').hide()
+      $('#sign-in').hide()
+      $('#sign-out').show()
+      $('#change-pw').hide()
+      $('#show-task').hide()
+      $('#delete-task').hide()
+      $('#create-task').hide()
+      $('#response-text').trigger('reset')
       })
 
         $('#show-task-button').click(function () {
           $('#show-task').show()
+          $('#change-pw').show()
+          $('#sign-up').hide()
+          $('#sign-in').hide()
+          $('#sign-out').show()
+          $('#change-pw').hide()
+          $('#index-task').show()
+          $('#delete-task').hide()
+          $('#update-task').hide()
+          $('#create-task').hide()
+          $('#response-text').trigger('reset')
         })
 
 $('#delete-task-button').click(function () {
   $('#delete-task').show()
   $('#delete-task-button').hide()
+  $('#change-pw').show()
+  $('#index-task').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#sign-out').show()
+  $('#change-pw').hide()
+  $('#show-task').hide()
+  $('#update-task').hide()
+  $('#create-task').hide()
+  $('#response-text').trigger('reset')
 })
   })

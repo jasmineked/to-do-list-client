@@ -6,6 +6,7 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   store.user = data.user
   $('form').trigger('reset')
+  $('#response-text').trigger('reset')
   $('#message').text('Welcome', data.user.email)
   $('#sign-up').hide()
   $('#sign-in').show()
@@ -15,6 +16,7 @@ const signUpSuccess = function (data) {
 
 const signUpFailure = function (error) {
   $('form').trigger('reset')
+  $('#response-text').trigger('reset')
   $('#message').text('Error signing up')
 }
 
@@ -30,37 +32,60 @@ const signInSuccess = function (data) {
   $('#change-pw-button').show()
   $('#index-task').show()
   $('#show-task-button').show()
+  $('#update-task-button').show()
   $('#create-task-button').show()
   $('#delete-task-button').show()
+  $('#response-text').trigger('reset')
 }
 const signInFailure = function (data) {
   $('#message').text('Error on sign in')
   $('form').trigger('reset')
+  $('#response-text').trigger('reset')
 }
 
 const signOutSuccess = function () {
   $('form').trigger('reset')
-  $('#message').text('See you soon')
+  $('#message').text('see you soon')
   $('#sign-out').hide()
   $('#sign-up-button').show()
   $('#sign-in-button').show()
-  store.user = null
+  $('#sign-out').hide()
+  $('#change-pw').hide()
+  $('#change-pw-button').hide()
+  $('#index-task').hide()
+  $('#show-task').hide()
+  $('#delete-task').hide()
+  $('#update-task').hide()
+  $('#create-task').hide()
+  $('#create-task-button').hide()
+  $('#show-task-button').hide()
+  $('#update-task-button').hide()
+  $('#delete-task-button').hide()
+  $('#response-text').trigger('reset')
+  
+    store.user = null
 }
 
 const signOutFailure = function (error) {
   $('#message').text('Guess you\'re stuck with us...')
   $('form').trigger('reset')
+  $('#response-text').trigger('reset')
+  $('#response-text').trigger('reset')
 }
 
 const changePwSuccess = function (data) {
   $('#message').text('Hope you wrote that one down!')
   $('#form').trigger('reset')
+  $('#response-text').trigger('reset')
   $('#change-pw').hide()
+  $('#response-text').trigger('reset')
 }
 
 const changePwFailure = function (error) {
+  $('#response-text').trigger('reset')
   $('#message').text('Try again?')
   $('form').trigger('reset')
+  $('#response-text').trigger('reset')
 }
 
 module.exports = {
