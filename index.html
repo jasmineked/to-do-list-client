@@ -40,18 +40,19 @@
 
       <form id='create-task'>
         <input name='task[text]' type='text'>
-        <input name='task[duedate]' type='date'>
+        <input name='task[dueDate]' type='date'>
+        <input type='submit' value='create task'>
         </form>
+
         <button id='create-task-button' type='submit'>Create Task</button>
 
-      <button id='index-task-button' name='task'>view all tasks</button>
+      <button id='index-task' type='submit'>view all tasks</button>
 
       <form id='delete-task' class='border'>
-        <fieldset>
          <input type='text' name='task[_id]' placeholder='enter task id'>
           <input type='submit' value='delete task'>
-        </fieldset>
       </form>
+      <button id='delete-task-button' type='submit'> delete task</button>
 
       <form id='show-task' class='border'>
         <input name='task[_id]' type='text' placeholder='search task'>
@@ -60,16 +61,14 @@
       <button id ='show-task-button' type='submit'>search</button>
 
       <form id='update-task' class='border'>
-        <fieldset>
-          <input type='text' name='task[id]' placeholder='enter task id'>
+          <input type='text' name='task[_id]' placeholder='enter task id'>
           <input type='text' name='task[text]' placeholder='enter task'>
           <input type='text' name='task[duedate]' placeholder='enter date due'>
           <button type='submit'>Update Task</button>
-        </fieldset>
       </form>
+  <button id='update-task-button' name ='update-task' type='submit'>update task</button>
 
-          <button id='sign-out' name ='sign-out' type='submit'>sign out</button>
+          <button id='sign-out' type='submit'>sign out</button>
 
-      </form>
     </body>
 </html>

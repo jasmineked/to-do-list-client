@@ -6,14 +6,18 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const onIndexTask = function () {
   event.preventDefault()
+
   api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onIndexFailure)
 }
 
+
+
 const onShowTask = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+
   api.show(data)
     .then(ui.onShowSuccess)
     .catch(ui.onShowFailure)

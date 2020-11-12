@@ -1,37 +1,41 @@
 'use strict'
 
+const store = require('../store')
+
 const onCreateSuccess = function (data) {
   $('#message').text('Task successfully created')
+  $('#create-task-button').hide()
+  $('#index-task').show()
 }
 
 const onCreateFailure = function (error) {
-  $('#message').text('Error creating task')
+  $('#message').text('Error creating task. Try again?')
 }
 
 const onIndexSuccess = function (responseData) {
-  console.log(responseData)
-
-  $('#message').html('')
-
-  responseData.tasks.forEach(tasks => {
+$('#message').text('Task successfully created')
+// replace before 9am^^^
+$('#message').html('')
+responseData.tasks.forEach(tasks => {
     const taskList = (`
       <p>Task: ${tasks.text}</p>
       <p>Due Date: ${tasks.dueDate}</p>
+      <p>Owner: ${tasks.owner}</p>
   `)
     $('#message').append(taskList)
   })
 }
 
 const onIndexFailure = function (error) {
-  $('#message').text('try again')
+  $('#message').text('Erro viewing all tasks. Try again?')
 }
 
-const onShowSuccess = function (data) {
-  $('#message').text('Selected task displayed')
+const onShowSuccess = function (responseData) {
+$('#message').text('Were you looking for?: ' + responseData.task.text)
 }
 
 const onShowFailure = function (error) {
-  $('#message').text('Error displaying selected task')
+  $('#message').text('Error displaying task')
 }
 
 const onDestroySuccess = function () {

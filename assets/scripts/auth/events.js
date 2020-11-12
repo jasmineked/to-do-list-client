@@ -7,10 +7,7 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('Sign up ran')
-
   const data = getFormFields(this)
-  console.log(data)
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -18,7 +15,6 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('Sign in ran!')
 
   const data = getFormFields(this)
   api.signIn(data)
@@ -28,7 +24,6 @@ const onSignIn = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('Sign out ran')
 
   api.signOut()
     .then(ui.signOutSuccess)
@@ -37,7 +32,6 @@ const onSignOut = function (event) {
 
 const onChangePw = function (event) {
   event.preventDefault()
-  console.log('Change PW ran!')
 
   const data = getFormFields(this)
   api.changePw(data)

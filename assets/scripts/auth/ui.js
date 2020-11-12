@@ -2,27 +2,20 @@
 // here, we handle the API response
 const store = require('../store')
 
-
-
 // the following are success & failure handler functions
 const signUpSuccess = function (data) {
   store.user = data.user
   $('form').trigger('reset')
   $('#message').text('Welcome', data.user.email)
   $('#sign-up').hide()
-  $('#sign-in').hide()
-  $('#sign-out').show()
+  $('#sign-in').show()
   $('#sign-in-button').hide()
   $('#sign-up-button').hide()
-  $('#change-pw-button').show()
-  $('#index-task-button').show()
-  $('#show-task-button').show()
-  $('#create-task-button').show()
 }
 
 const signUpFailure = function (error) {
   $('form').trigger('reset')
-  $('#message').text('Error on sign up')
+  $('#message').text('Error signing up')
 }
 
 const signInSuccess = function (data) {
@@ -35,10 +28,10 @@ const signInSuccess = function (data) {
   $('#sign-in-button').hide()
   $('#sign-up-button').hide()
   $('#change-pw-button').show()
-  $('#index-task-button').show()
+  $('#index-task').show()
   $('#show-task-button').show()
   $('#create-task-button').show()
-
+  $('#delete-task-button').show()
 }
 const signInFailure = function (data) {
   $('#message').text('Error on sign in')
@@ -66,7 +59,7 @@ const changePwSuccess = function (data) {
 }
 
 const changePwFailure = function (error) {
-  $('#message').text('Error on change password')
+  $('#message').text('Try again?')
   $('form').trigger('reset')
 }
 
