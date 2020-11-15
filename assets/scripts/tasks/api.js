@@ -36,7 +36,7 @@ const destroy = function (data) {
 
 const update = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/tasks/' + data.task.id,
+    url: config.apiUrl + '/tasks/' + data.task._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token

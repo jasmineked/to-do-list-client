@@ -39,17 +39,20 @@ $(() => {
 
   $('#sign-up-button').click(function () {
     $('#sign-up').show()
-    $('#sign-in-button').hide()
+    $('#sign-in-button').show()
     $('#sign-up-button').hide()
-    // $('#message').text('already joined?')
-    // $('#sign-in-button').hide()
+    $('#message').text('already joined?')
+   
+    
 
   })
 
   $('#sign-in-button').click(function () {
     $('#sign-in').show()
     $('#sign-in-button').hide()
-    $('#sign-up-button').hide()
+    $('#sign-up-button').show()
+    $('#sign-up').hide()
+    $('#message').text('not a member?')
   })
 
 
@@ -63,6 +66,7 @@ $(() => {
     $('#delete-task').hide()
     $('#update-task').hide()
     $('#create-task').hide()
+    $('#response-text').trigger('reset')
   })
 
   // $('#index-task').click(function () {
@@ -81,14 +85,14 @@ $(() => {
       $('#show-task').hide()
       $('#delete-task').hide()
       $('#update-task').hide()
+      $('#update-task-button').show()
       $('#response-text').trigger('reset')
 
   })
 
     $('#update-task-button').click(function () {
       $('#update-task').show()
-      $('#change-pw').show()
-      $('#index-task').show()
+     // $('#index-task').show()
       $('#sign-up').hide()
       $('#sign-in').hide()
       $('#sign-out').show()
@@ -115,7 +119,9 @@ $(() => {
 
 $('#delete-task-button').click(function () {
   $('#delete-task').show()
+  $('#create-task-button').show()
   $('#delete-task-button').hide()
+  $('#update-task-button').show()
   $('#change-pw').show()
   $('#index-task').show()
   $('#sign-up').hide()

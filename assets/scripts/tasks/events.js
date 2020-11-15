@@ -27,6 +27,7 @@ const onDeleteTask = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.destroy(data)
+
     .then(ui.onDestroySuccess)
     .catch(ui.onDestroyFailure)
 }

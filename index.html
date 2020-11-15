@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>to-dont</title>
+      <title>organize your life.</title>
       <meta name='viewport' content='width=device-width, initial-scale=1'>
 
       <!-- Do not add `link` tags-->
@@ -19,6 +19,7 @@
 
 <div class='container'>
       <p id='message'></p>
+      <p id='message2'></p>
     </div>
 
 <div class='container'>
@@ -87,8 +88,8 @@
 
 <div class='form-group'>
       <form id='show-task'>
-        <input name='task[_id]' type='text' class='form-control' placeholder='search task'>
-        <input type='submit' class='form-control' value='show task'>
+        <input name='task[_id]' type='text' class='form-control' placeholder='enter task id'>
+        <input type='submit' class='form-control' value='search'>
       </form>
     </div>
 
@@ -97,7 +98,7 @@
           <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
           <input type='text' name='task[text]' class='form-control' placeholder='enter task'>
           <input type='date' name='task[duedate]' class='form-control' placeholder='enter date due'>
-          <input type='submit' class='form-control' placeholder='update task'>
+          <input type='submit' class='form-control' value='update task'>
         </div>
 
       <div class='container' id='response-text'>
