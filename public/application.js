@@ -16600,7 +16600,6 @@ $(function () {
   $('#update-task').on('submit', taskEvents.onUpdateTask);
   $('#create-task').on('submit', taskEvents.onCreateTask);
 
-  //  <button id='sign-up' type='submit' value='sign up'>
   // these are hidden by default
   $('#sign-up').hide();
   $('#sign-in').hide();
@@ -16619,16 +16618,17 @@ $(function () {
 
   $('#sign-up-button').click(function () {
     $('#sign-up').show();
-    $('#sign-in-button').hide();
+    $('#sign-in-button').show();
     $('#sign-up-button').hide();
-    // $('#message').text('already joined?')
-    // $('#sign-in-button').hide()
+    $('#message').text('already joined?');
   });
 
   $('#sign-in-button').click(function () {
     $('#sign-in').show();
     $('#sign-in-button').hide();
-    $('#sign-up-button').hide();
+    $('#sign-up-button').show();
+    $('#sign-up').hide();
+    $('#message').text('not a member?');
   });
 
   $('#change-pw-button').click(function () {
@@ -16641,11 +16641,8 @@ $(function () {
     $('#delete-task').hide();
     $('#update-task').hide();
     $('#create-task').hide();
+    $('#response-text').trigger('reset');
   });
-
-  // $('#index-task').click(function () {
-  //$('#index-task').hide()
-  // })
 
   $('#create-task-button').click(function () {
     $('#create-task').show();
@@ -16659,13 +16656,12 @@ $(function () {
     $('#show-task').hide();
     $('#delete-task').hide();
     $('#update-task').hide();
+    $('#update-task-button').show();
     $('#response-text').trigger('reset');
   });
 
   $('#update-task-button').click(function () {
     $('#update-task').show();
-    $('#change-pw').show();
-    $('#index-task').show();
     $('#sign-up').hide();
     $('#sign-in').hide();
     $('#sign-out').show();
@@ -16692,7 +16688,9 @@ $(function () {
 
   $('#delete-task-button').click(function () {
     $('#delete-task').show();
+    $('#create-task-button').show();
     $('#delete-task-button').hide();
+    $('#update-task-button').show();
     $('#change-pw').show();
     $('#index-task').show();
     $('#sign-up').hide();
@@ -16976,6 +16974,7 @@ var onShowTask = function onShowTask(event) {
 
 var onDeleteTask = function onDeleteTask(event) {
   event.preventDefault();
+  console.log(data);
   var data = getFormFields(event.target);
   api.destroy(data).then(ui.onDestroySuccess).catch(ui.onDestroyFailure);
 };
@@ -17043,7 +17042,7 @@ var destroy = function destroy(data) {
 
 var update = function update(data) {
   return $.ajax({
-    url: config.apiUrl + '/tasks/' + data.task.id,
+    url: config.apiUrl + '/tasks/' + data.task._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -17082,22 +17081,25 @@ module.exports = {
 var store = __webpack_require__(67);
 
 var onCreateSuccess = function onCreateSuccess(data) {
-  $('#message').text('Task successfully created');
+  $('#message').text(data.task.text);
+  $('#message2').text('due: ' + data.task.dueDate);
   $('#create-task-button').hide();
   $('#index-task').show();
-  // $('#id').text()
+  $('form').trigger('reset');
+  $('#response-text').trigger('reset');
 };
 
 var onCreateFailure = function onCreateFailure(error) {
   $('#message').text('Error creating task. Try again?');
+  $('form').trigger('reset');
 };
 
 var onIndexSuccess = function onIndexSuccess(responseData) {
-  $('#message').text('here are your incomplete task: ');
+  $('#message').text('here are your incomplete tasks: ');
   // replace before 9am^^^
   $('#response-text').html('');
   responseData.tasks.forEach(function (tasks) {
-    var taskList = '\n      </br>\n      <p>Task: ' + tasks.text + '</p>\n      <p>Due Date: ' + tasks.dueDate + '</p>\n      <p>Owner: ' + tasks.owner + '</p>\n      <p>ID: ' + tasks._id + '</p>\n      </br>\n  ';
+    var taskList = '\n      </br>\n      <p> ' + tasks.text + '</p>\n      <p>due ' + tasks.dueDate + '</p>\n      <p>Owner: ' + tasks.owner + '</p>\n      <p>ID: ' + tasks._id + '</p>\n      </br>\n  ';
     $('#response-text').append(taskList);
   });
 };
@@ -17107,32 +17109,44 @@ var onIndexFailure = function onIndexFailure(error) {
 };
 
 var onShowSuccess = function onShowSuccess(responseData) {
+  console.log(responseData);
+  // can we find a way to implement a scrollbar to #responsetext so that
   $('#response-text').trigger('reset');
-  $('#response-text').text('were you looking for?: ' + responseData.tasks.text);
+  $('#response-text').text('were you looking for?: ' + responseData.task.text);
+  $('form').trigger('reset');
+  $('#message').trigger('reset');
 };
 
 var onShowFailure = function onShowFailure(error) {
   $('#message').text('error displaying task');
+  console.log(error);
   $('#response-text').trigger('reset');
+  $('form').trigger('reset');
 };
 
 var onDestroySuccess = function onDestroySuccess() {
+  $('form').trigger('reset');
   $('#message').text('task successfully deleted');
   $('#response-text').trigger('reset');
 };
 
 var onDestroyFailure = function onDestroyFailure(error) {
   $('#message').text('error deleting task');
+  $('form').trigger('reset');
   $('#response-text').trigger('reset');
+  $('form').trigger('reset');
 };
 
 var onUpdateSuccess = function onUpdateSuccess() {
   $('#message').text('task successfully updated');
+  // $('#message2').text(data.task)
+  $('form').trigger('reset');
   $('#response-text').trigger('reset');
 };
 
 var onUpdateFailure = function onUpdateFailure(error) {
   $('#message').text('error on updating task');
+  $('form').trigger('reset');
   $('#response-text').trigger('reset');
 };
 

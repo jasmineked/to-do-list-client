@@ -36,7 +36,7 @@ Sign-in: Click one of the deployment links above to open application. Click the 
     My BIG idea was to create an app that recorded & tracked tasks shared by a small group of people. I decided to start with a task list designed for one user in hopes to continue adding features & actions that will become the bigger idea of a task list network.
 
     __problem-solving strategy__
-     While creating V1, every time I ran into a bug or something wasn't working correctly, my first instinct would be to find the error. Checked my server,  SourceMap, console.log'd (& used the SourceMap to figure out where to ask for data in my console), run GRUNT MAKE-STANDARD & read my classmates' issues.
+     While creating V1, every time I ran into a bug or something wasn't working correctly, my first instinct would be to find the error. Checked my server,  SourceMap, 'd (& used the SourceMap to figure out where to ask for data in my console), run GRUNT MAKE-STANDARD & read my classmates' issues.
 
 *** Unsolved problems, updates to expect: ***
 - Find tasks by text and/or date.

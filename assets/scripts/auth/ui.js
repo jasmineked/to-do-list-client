@@ -61,16 +61,14 @@ const signOutSuccess = function () {
   $('#show-task-button').hide()
   $('#update-task-button').hide()
   $('#delete-task-button').hide()
-  $('#response-text').trigger('reset')
-
+  $('#response-text').hide()
   store.user = null
 }
 
 const signOutFailure = function (error) {
   $('#message').text('Guess you\'re stuck with us...')
   $('form').trigger('reset')
-  $('#response-text').trigger('reset')
-  $('#response-text').trigger('reset')
+  $('#response-text').hide()
 }
 
 const changePwSuccess = function (data) {
