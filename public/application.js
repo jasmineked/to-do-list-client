@@ -16615,11 +16615,13 @@ $(function () {
   $('#show-task-button').hide();
   $('#update-task-button').hide();
   $('#delete-task-button').hide();
+  $('#response-text').hide();
 
   $('#sign-up-button').click(function () {
     $('#sign-up').show();
     $('#sign-in-button').show();
     $('#sign-up-button').hide();
+    $('#sign-in').hide();
     $('#message').text('already joined?');
   });
 
@@ -16641,12 +16643,13 @@ $(function () {
     $('#delete-task').hide();
     $('#update-task').hide();
     $('#create-task').hide();
-    $('#response-text').trigger('reset');
+    $('#response-text').hide();
   });
 
   $('#create-task-button').click(function () {
     $('#create-task').show();
     $('#delete-task-button').show();
+    $('#create-task-button').show();
     $('#change-pw').show();
     $('#sign-up').hide();
     $('#sign-in').hide();
@@ -16657,7 +16660,6 @@ $(function () {
     $('#delete-task').hide();
     $('#update-task').hide();
     $('#update-task-button').show();
-    $('#response-text').trigger('reset');
   });
 
   $('#update-task-button').click(function () {
@@ -16669,12 +16671,11 @@ $(function () {
     $('#show-task').hide();
     $('#delete-task').hide();
     $('#create-task').hide();
-    $('#response-text').trigger('reset');
   });
 
   $('#show-task-button').click(function () {
     $('#show-task').show();
-    $('#change-pw').show();
+    $('#change-pw-button').show();
     $('#sign-up').hide();
     $('#sign-in').hide();
     $('#sign-out').show();
@@ -16689,7 +16690,6 @@ $(function () {
   $('#delete-task-button').click(function () {
     $('#delete-task').show();
     $('#create-task-button').show();
-    $('#delete-task-button').hide();
     $('#update-task-button').show();
     $('#change-pw').show();
     $('#index-task').show();
@@ -16700,7 +16700,11 @@ $(function () {
     $('#show-task').hide();
     $('#update-task').hide();
     $('#create-task').hide();
-    $('#response-text').trigger('reset');
+  });
+
+  $('#index-task').click(function () {
+    $('#response-text').show();
+    $('#change-pw').hide();
   });
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
@@ -16909,16 +16913,14 @@ var signOutSuccess = function signOutSuccess() {
   $('#show-task-button').hide();
   $('#update-task-button').hide();
   $('#delete-task-button').hide();
-  $('#response-text').trigger('reset');
-
+  $('#response-text').hide();
   store.user = null;
 };
 
 var signOutFailure = function signOutFailure(error) {
   $('#message').text('Guess you\'re stuck with us...');
   $('form').trigger('reset');
-  $('#response-text').trigger('reset');
-  $('#response-text').trigger('reset');
+  $('#response-text').hide();
 };
 
 var changePwSuccess = function changePwSuccess(data) {
@@ -16974,7 +16976,6 @@ var onShowTask = function onShowTask(event) {
 
 var onDeleteTask = function onDeleteTask(event) {
   event.preventDefault();
-  console.log(data);
   var data = getFormFields(event.target);
   api.destroy(data).then(ui.onDestroySuccess).catch(ui.onDestroyFailure);
 };
@@ -17095,11 +17096,12 @@ var onCreateFailure = function onCreateFailure(error) {
 };
 
 var onIndexSuccess = function onIndexSuccess(responseData) {
+  // console.log(responseData)
   $('#message').text('here are your incomplete tasks: ');
-  // replace before 9am^^^
+  $('#message2').hide();
   $('#response-text').html('');
   responseData.tasks.forEach(function (tasks) {
-    var taskList = '\n      </br>\n      <p> ' + tasks.text + '</p>\n      <p>due ' + tasks.dueDate + '</p>\n      <p>Owner: ' + tasks.owner + '</p>\n      <p>ID: ' + tasks._id + '</p>\n      </br>\n  ';
+    var taskList = '\n      </br>\n      <p>' + tasks.text + '</p>\n      <p>due ' + tasks.dueDate + '</p>\n      <p>Owner: ' + tasks.owner + '</p>\n      <p>ID: ' + tasks._id + '</p>\n      </br>\n  ';
     $('#response-text').append(taskList);
   });
 };
@@ -17109,17 +17111,16 @@ var onIndexFailure = function onIndexFailure(error) {
 };
 
 var onShowSuccess = function onShowSuccess(responseData) {
-  console.log(responseData);
   // can we find a way to implement a scrollbar to #responsetext so that
   $('#response-text').trigger('reset');
   $('#response-text').text('were you looking for?: ' + responseData.task.text);
   $('form').trigger('reset');
   $('#message').trigger('reset');
+  $('#message2').trigger('reset');
 };
 
 var onShowFailure = function onShowFailure(error) {
   $('#message').text('error displaying task');
-  console.log(error);
   $('#response-text').trigger('reset');
   $('form').trigger('reset');
 };
@@ -17139,7 +17140,6 @@ var onDestroyFailure = function onDestroyFailure(error) {
 
 var onUpdateSuccess = function onUpdateSuccess() {
   $('#message').text('task successfully updated');
-  // $('#message2').text(data.task)
   $('form').trigger('reset');
   $('#response-text').trigger('reset');
 };
