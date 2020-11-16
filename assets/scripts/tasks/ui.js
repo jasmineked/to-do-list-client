@@ -17,14 +17,14 @@ const onCreateFailure = function (error) {
 }
 
 const onIndexSuccess = function (responseData) {
-$('#message').text('here are your incomplete task: ')
+$('#message').text('here are your incomplete tasks: ')
 // replace before 9am^^^
 $('#response-text').html('')
 responseData.tasks.forEach(tasks => {
     const taskList = (`
       </br>
-      <p>Task: ${tasks.text}</p>
-      <p>Due Date: ${tasks.dueDate}</p>
+      <p> ${tasks.text}</p>
+      <p>due ${tasks.dueDate}</p>
       <p>Owner: ${tasks.owner}</p>
       <p>ID: ${tasks._id}</p>
       </br>
@@ -39,6 +39,7 @@ const onIndexFailure = function (error) {
 
 const onShowSuccess = function (responseData) {
   console.log(responseData)
+  // can we find a way to implement a scrollbar to #responsetext so that
 $('#response-text').trigger('reset')
 $('#response-text').text('were you looking for?: ' + responseData.task.text)
 $('form').trigger('reset')

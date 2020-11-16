@@ -62,8 +62,8 @@ const signOutSuccess = function () {
   $('#update-task-button').hide()
   $('#delete-task-button').hide()
   $('#response-text').trigger('reset')
-  
-    store.user = null
+
+  store.user = null
 }
 
 const signOutFailure = function (error) {

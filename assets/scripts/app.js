@@ -20,7 +20,6 @@ $(() => {
   $('#update-task').on('submit', taskEvents.onUpdateTask)
   $('#create-task').on('submit', taskEvents.onCreateTask)
 
-  //  <button id='sign-up' type='submit' value='sign up'>
   // these are hidden by default
   $('#sign-up').hide()
   $('#sign-in').hide()
@@ -42,9 +41,6 @@ $(() => {
     $('#sign-in-button').show()
     $('#sign-up-button').hide()
     $('#message').text('already joined?')
-   
-    
-
   })
 
   $('#sign-in-button').click(function () {
@@ -54,7 +50,6 @@ $(() => {
     $('#sign-up').hide()
     $('#message').text('not a member?')
   })
-
 
   $('#change-pw-button').click(function () {
     $('#change-pw').show()
@@ -68,10 +63,6 @@ $(() => {
     $('#create-task').hide()
     $('#response-text').trigger('reset')
   })
-
-  // $('#index-task').click(function () {
-     //$('#index-task').hide()
-  // })
 
   $('#create-task-button').click(function () {
     $('#create-task').show()
@@ -87,12 +78,10 @@ $(() => {
       $('#update-task').hide()
       $('#update-task-button').show()
       $('#response-text').trigger('reset')
-
   })
 
     $('#update-task-button').click(function () {
       $('#update-task').show()
-     // $('#index-task').show()
       $('#sign-up').hide()
       $('#sign-in').hide()
       $('#sign-out').show()

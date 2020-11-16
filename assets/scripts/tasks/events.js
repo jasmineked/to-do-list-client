@@ -12,8 +12,6 @@ const onIndexTask = function () {
     .catch(ui.onIndexFailure)
 }
 
-
-
 const onShowTask = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -25,6 +23,7 @@ const onShowTask = function (event) {
 
 const onDeleteTask = function (event) {
   event.preventDefault()
+  console.log(data)
   const data = getFormFields(event.target)
   api.destroy(data)
 
