@@ -16616,6 +16616,8 @@ $(function () {
   $('#update-task-button').hide();
   $('#delete-task-button').hide();
   $('#response-text').hide();
+  $('#navbarDropdown').hide();
+  $('#navbar').hide();
 
   $('#sign-up-button').click(function () {
     $('#sign-up').show();
@@ -16656,7 +16658,6 @@ $(function () {
     $('#sign-out').show();
     $('#change-pw').hide();
     $('#index-task').show();
-    $('#show-task').hide();
     $('#delete-task').hide();
     $('#update-task').hide();
     $('#update-task-button').show();
@@ -16668,7 +16669,6 @@ $(function () {
     $('#sign-in').hide();
     $('#sign-out').show();
     $('#change-pw').hide();
-    $('#show-task').hide();
     $('#delete-task').hide();
     $('#create-task').hide();
   });
@@ -16697,7 +16697,6 @@ $(function () {
     $('#sign-in').hide();
     $('#sign-out').show();
     $('#change-pw').hide();
-    $('#show-task').hide();
     $('#update-task').hide();
     $('#create-task').hide();
   });
@@ -16863,7 +16862,7 @@ var signUpSuccess = function signUpSuccess(data) {
   $('#sign-up').hide();
   $('#sign-in').show();
   $('#sign-in-button').hide();
-  $('#sign-up-button').hide();
+  $('#sign-up-button').show();
 };
 
 var signUpFailure = function signUpFailure(error) {
@@ -16875,6 +16874,7 @@ var signUpFailure = function signUpFailure(error) {
 var signInSuccess = function signInSuccess(data) {
   $('form').trigger('reset');
   store.user = data.user;
+  $('#navbar').show();
   $('#message').text('Welcome back', data.user.email);
   $('#sign-up').hide();
   $('#sign-in').hide();
@@ -16888,6 +16888,8 @@ var signInSuccess = function signInSuccess(data) {
   $('#create-task-button').show();
   $('#delete-task-button').show();
   $('#response-text').trigger('reset');
+  $('#essence').hide();
+  $('#show-task').show();
 };
 var signInFailure = function signInFailure(data) {
   $('#message').text('Error on sign in');
@@ -16914,6 +16916,8 @@ var signOutSuccess = function signOutSuccess() {
   $('#update-task-button').hide();
   $('#delete-task-button').hide();
   $('#response-text').hide();
+  $('#navbar').hide();
+  $('#essence').show();
   store.user = null;
 };
 
@@ -16970,7 +16974,7 @@ var onIndexTask = function onIndexTask() {
 var onShowTask = function onShowTask(event) {
   event.preventDefault();
   var data = getFormFields(event.target);
-
+  console.log(data);
   api.show(data).then(ui.onShowSuccess).catch(ui.onShowFailure);
 };
 
@@ -17095,13 +17099,17 @@ var onCreateFailure = function onCreateFailure(error) {
   $('form').trigger('reset');
 };
 
+function handleClick(cb) {
+  display('Clicked, new value= ' + cb.checked);
+}
+
 var onIndexSuccess = function onIndexSuccess(responseData) {
   // console.log(responseData)
   $('#message').text('here are your incomplete tasks: ');
   $('#message2').hide();
   $('#response-text').html('');
   responseData.tasks.forEach(function (tasks) {
-    var taskList = '\n      </br>\n      <p>' + tasks.text + '</p>\n      <p>due ' + tasks.dueDate + '</p>\n      <p>Owner: ' + tasks.owner + '</p>\n      <p>ID: ' + tasks._id + '</p>\n      </br>\n  ';
+    var taskList = '\n      <p></br><label><input type=\'checkbox\' onclick=\'handleClick(this);\' ></label> ' + tasks.text + '</p>\n      <p>due ' + tasks.dueDate + '</p>\n      <p>ID: ' + tasks._id + '</p>\n  ';
     $('#response-text').append(taskList);
   });
 };
