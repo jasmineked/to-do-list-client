@@ -44,7 +44,6 @@ Sign-in: Click one of the deployment links above to open application. Click the 
 - Reformat the date element and add an optional field for time.
 - Make the search (SHOW), update (PATCH) & delete (DESTROY) actions more user friendly (eg., implement a checkbox so users can select the task(s).
 - Index all user's task by default & categorize them by lists that displays upon log-in
-Unfortunately, I was not able to figure out how to implement my LIST model without making a mess.
 
 *** Technologies used: ***
 JavaScript

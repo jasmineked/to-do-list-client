@@ -34,6 +34,18 @@
               <li class="nav-item">
                 <a class="nav-link" id='delete-task-button' href="#">delete</a>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="drop1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  lists<b class="caret"></b>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#" id='index-list'>view</a>
+                  <a class="dropdown-item" href="#" id='create-list-button'>create</a>
+                  <a class="dropdown-item" href="#" id='update-list-button'>update</a>
+                  <a class="dropdown-item" href="#" id='show-list-button'>search</a>
+                  <a class="dropdown-item" href="#" id='delete-list-button'>delete</a>
+                </div>
+              </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="drop1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             settings<b class="caret"></b>
@@ -115,8 +127,6 @@
       </form>
     </div>
 
-
-
 <div class='form-group'>
       <form id='update-task'>
           <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
@@ -124,9 +134,18 @@
           <input type='date' name='task[duedate]' class='form-control' placeholder='enter date due'>
           <input type='submit' class='form-control' value='update task'>
         </div>
+            </form>
 <div class='container' id='list-here'></div>
       <div class='container' id='response-text'>
       </div>
-      </form>
+
+      <div class="form-group">
+      <form id='list-form'>
+        <input name='list[category]'class='form-control' type='text' placeholder='category'>
+    <br />
+ <textarea name='list[description]' class="form-control" rows="2" col='1'></textarea>
+ <input type='submit' class='form-control' value='create list'>
+</form>
+</div>
     </body>
 </html>
