@@ -12,28 +12,59 @@
       <script src='public/application.js' type='text/javascript' charset='utf-8' defer></script>
     </head>
     <body>
-      <div class='container'>
-      <h1>essence.</h1>
-      <h4>/ˈesəns/</h4>
-      <p>own every moment.</p>
-
-<div class='container'>
-      <p id='message'></p>
-      <p id='message2'></p>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id='navbar'>
+        <a class="navbar-brand" href="#">essənse.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">own every moment.</a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" id='create-task-button' href="#">create</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id='index-task' href="#">tasks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id='update-task-button' href="#">update</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id='delete-task-button' href="#">delete</a>
+              </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="drop1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            settings<b class="caret"></b>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" id='change-pw-button'>change password</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id='sign-out' href="#">sign out</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" id='show-task'>
+          <input name='task[_id]' type='text' class='form-control' placeholder='enter task id'  aria-label="Search">
+          <input class="btn btn-outline-success my-2 my-sm-0" type='submit' class='form-control' value='search' placeholder="search">
+      </form>
     </div>
-
-<div class='container'>
-<button id='sign-up-button' class= 'btn btn-primary' type='button'>start today</button>
-<button id='sign-in-button' class= 'btn btn-primary' type='button'>sign in</button>
-<button id='change-pw-button' class= 'btn btn-primary' type='button'>change password</button>
-<button id='create-task-button' class= 'btn btn-primary' type='submit'>create</button>
-<button id='index-task' class= 'btn btn-primary' type='submit'>view all </button>
-<button id='delete-task-button' class= 'btn btn-primary' type='submit'> delete</button>
-<button id ='show-task-button' class= 'btn btn-primary' type='submit'>search</button>
-<button id='update-task-button'class= 'btn btn-primary'  name ='update-task' type='submit'>update</button>
-<button id='sign-out' class= 'btn btn-primary' type='submit'>sign out</button>
+  </nav>
+<div id='essence'>
+<h1>essence.</h1>
+<h4>/ˈesəns/</h4>
+<p>own every moment.</p>
 </div>
-<div class='container'>
+
+      <div class='messages'>
+    <p id='message'></p>
+    <p id='message2'></p>
+          </div>
+
+      <button id='sign-up-button' class= 'btn btn-secondary' type='button'>start today</button>
+      <button id='sign-in-button' class= 'btn btn-secondary' type='button'>sign in</button>
 
    <form id='sign-up'>
      <div class='form-group'>
@@ -46,7 +77,6 @@
 </div>
 <div class='form-group'>
 <input type='submit' class='form-control' value='sign-up'>
-</div>
 </div>
 </form>
 
@@ -72,11 +102,10 @@
 
 <div class='form-group'>
       <form id='create-task'>
-        <input name='task[text]'class='form-control' type='text'>
+        <input name='task[text]'class='form-control' type='text' placeholder='enter task'>
         <input name='task[dueDate]' class='form-control' type='date'>
         <input type='submit'class='form-control' value='create task'>
         </form>
-        <p id='id'></p>
       </div>
 
 <div class='form-group'>
@@ -86,12 +115,7 @@
       </form>
     </div>
 
-<div class='form-group'>
-      <form id='show-task'>
-        <input name='task[_id]' type='text' class='form-control' placeholder='enter task id'>
-        <input type='submit' class='form-control' value='search'>
-      </form>
-    </div>
+
 
 <div class='form-group'>
       <form id='update-task'>
@@ -100,7 +124,7 @@
           <input type='date' name='task[duedate]' class='form-control' placeholder='enter date due'>
           <input type='submit' class='form-control' value='update task'>
         </div>
-
+<div class='container' id='list-here'></div>
       <div class='container' id='response-text'>
       </div>
       </form>

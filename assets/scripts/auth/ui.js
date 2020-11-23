@@ -11,7 +11,8 @@ const signUpSuccess = function (data) {
   $('#sign-up').hide()
   $('#sign-in').show()
   $('#sign-in-button').hide()
-  $('#sign-up-button').hide()
+  $('#sign-up-button').show()
+
 }
 
 const signUpFailure = function (error) {
@@ -23,6 +24,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('form').trigger('reset')
   store.user = data.user
+  $('#navbar').show()
   $('#message').text('Welcome back', data.user.email)
   $('#sign-up').hide()
   $('#sign-in').hide()
@@ -36,6 +38,8 @@ const signInSuccess = function (data) {
   $('#create-task-button').show()
   $('#delete-task-button').show()
   $('#response-text').trigger('reset')
+  $('#essence').hide()
+  $('#show-task').show()
 }
 const signInFailure = function (data) {
   $('#message').text('Error on sign in')
@@ -62,6 +66,8 @@ const signOutSuccess = function () {
   $('#update-task-button').hide()
   $('#delete-task-button').hide()
   $('#response-text').hide()
+  $('#navbar').hide()
+  $('#essence').show()
   store.user = null
 }
 

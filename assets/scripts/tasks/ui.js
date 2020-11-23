@@ -16,6 +16,10 @@ const onCreateFailure = function (error) {
   $('form').trigger('reset')
 }
 
+function handleClick (cb) {
+  display('Clicked, new value= ' + cb.checked)
+}
+
 const onIndexSuccess = function (responseData) {
   // console.log(responseData)
   $('#message').text('here are your incomplete tasks: ')
@@ -23,12 +27,9 @@ const onIndexSuccess = function (responseData) {
   $('#response-text').html('')
   responseData.tasks.forEach(tasks => {
     const taskList = (`
-      </br>
-      <p>${tasks.text}</p>
+      <p></br><label><input type='checkbox' onclick='handleClick(this);' ></label> ${tasks.text}</p>
       <p>due ${tasks.dueDate}</p>
-      <p>Owner: ${tasks.owner}</p>
       <p>ID: ${tasks._id}</p>
-      </br>
   `)
     $('#response-text').append(taskList)
   })

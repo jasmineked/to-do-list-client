@@ -18,17 +18,17 @@ Sign-in: Click one of the deployment links above to open application. Click the 
 
 ***EVERY ACTION LISTED BELOW REQUIRES USER TO SIGN-UP &/OR SIGN-IN***
 
-*Change password:* sign up for an account & sign in (or sign in if user has already created an account) and upon successful log-in, user will see a row of buttons. click 'change password' & a form with three text fields should appear. fill in as instructed (first field: old password, second field: new password, third field: confirm new password) and click 'confirm'.
+*Change password:* sign up for an account & sign in (or sign in if user has already created an account) and upon successful log-in, a navigation bar will appear. Click SETTINGS then select CHANGE PASSWORD & a form with three text fields should appear. fill in as instructed (first field: old password, second field: new password, third field: confirm new password) and click 'confirm'.
 
-*Create new task:* Click on the CREATE button. Enter the task of choice & the date it is due. Both are required to successfully create a new task.
+*Create new task:* Click on the CREATE. Enter the task of choice & the date it is due. Both are required to successfully create a new task.
 
-*View all tasks:* Click on the VIEW ALL TASKS button. Tasks should be listed below.
+*View all tasks:* Click on the VIEW ALL TASKS. Tasks should be listed below.
 
-*Show one task:* Click on SEARCH button. Enter the ID of the task you are searching for & click submit. Task will appear below.
+*Show one task:* Enter the ID of the task you are searching for & click submit. Task will appear below.
 
-*Update task:* Click on UPDATE button. Three form fields should appear. Fill in each one as instructed (first field: Enter the ID of the task you'd like to update, second field: enter the updated task, third field: enter due date), then click UPDATE TASK.
+*Update task:* Click on UPDATE. Three form fields should appear. Fill in each one as instructed (first field: Enter the ID of the task you'd like to update, second field: enter the updated task, third field: enter due date), then click UPDATE TASK. Click TASKS in the navigation bar to view new task on list.
 
-*Delete Task:* Click on DELETE BUTTON. Enter the ID of the TASK you'd like to delete, then click DELETE TASK.
+*Delete Task:* Click on DELETE. Enter the ID of the TASK you'd like to delete, then click DELETE TASK.
 
 *Log-out:* Click the SIGN OUT button at any time.
 
@@ -36,14 +36,15 @@ Sign-in: Click one of the deployment links above to open application. Click the 
     My BIG idea was to create an app that recorded & tracked tasks shared by a small group of people. I decided to start with a task list designed for one user in hopes to continue adding features & actions that will become the bigger idea of a task list network.
 
     __problem-solving strategy__
-     While creating V1, every time I ran into a bug or something wasn't working correctly, my first instinct would be to find the error. Checked my server,  SourceMap, 'd (& used the SourceMap to figure out where to ask for data in my console), run GRUNT MAKE-STANDARD & read my classmates' issues.
+     While creating V1, every time I ran into a bug or something wasn't working correctly, I would check my server,  SourceMap, 'd (& used the SourceMap to figure out where to log data in the console during troubleshooting), run GRUNT MAKE-STANDARD & read my classmates' issues.
 
 *** Unsolved problems, updates to expect: ***
 - Find tasks by text and/or date.
 - Display & refresh the list every time a new task is created.
 - Reformat the date element and add an optional field for time.
 - Make the search (SHOW), update (PATCH) & delete (DESTROY) actions more user friendly (eg., implement a checkbox so users can select the task(s).
-- Index all user's task by default or possibly store them in lists that displays upon log-in
+- Index all user's task by default & categorize them by lists that displays upon log-in
+Unfortunately, I was not able to figure out how to implement my LIST model without making a mess.
 
 *** Technologies used: ***
 JavaScript
@@ -52,7 +53,6 @@ BOOTSTRAP
 CSS
 MongoDB
 Mongoose
-[Wireframe]:JustInMind
 
 *** Resources: ***
 [Al Gore's internet](google.com)

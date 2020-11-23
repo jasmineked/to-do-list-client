@@ -36,7 +36,8 @@ $(() => {
   $('#update-task-button').hide()
   $('#delete-task-button').hide()
   $('#response-text').hide()
-
+  $('#navbarDropdown').hide()
+  $('#navbar').hide()
 
   $('#sign-up-button').click(function () {
     $('#sign-up').show()
@@ -77,7 +78,6 @@ $(() => {
     $('#sign-out').show()
     $('#change-pw').hide()
     $('#index-task').show()
-    $('#show-task').hide()
     $('#delete-task').hide()
     $('#update-task').hide()
     $('#update-task-button').show()
@@ -89,7 +89,6 @@ $(() => {
     $('#sign-in').hide()
     $('#sign-out').show()
     $('#change-pw').hide()
-    $('#show-task').hide()
     $('#delete-task').hide()
     $('#create-task').hide()
   })
@@ -106,7 +105,6 @@ $(() => {
     $('#update-task').hide()
     $('#create-task').hide()
     $('#response-text').trigger('reset')
-
   })
 
   $('#delete-task-button').click(function () {
@@ -119,7 +117,6 @@ $(() => {
     $('#sign-in').hide()
     $('#sign-out').show()
     $('#change-pw').hide()
-    $('#show-task').hide()
     $('#update-task').hide()
     $('#create-task').hide()
   })
