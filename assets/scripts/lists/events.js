@@ -16,7 +16,7 @@ const onShowList = function (event) {
   event.preventDefault()
   const form = (event.target)
   const data = getFormFields(form)
-  console.log(data)
+
   api.showList(data)
     .then(ui.onShowSuccess)
     .catch(ui.onShowFailure)
@@ -42,15 +42,16 @@ const onUpdateList = function (event) {
 const onCreateList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   api.createList(data)
     .then(ui.onCreateSuccess)
     .catch(ui.onCreateFailure)
 }
 
 module.exports = {
-  onShowTask,
-  onIndexTask,
-  onDeleteTask,
-  onUpdateTask,
-  onCreateTask
+  onShowList,
+  onIndexList,
+  onDeleteList,
+  onUpdateList,
+  onCreateList
 }

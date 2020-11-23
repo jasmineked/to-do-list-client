@@ -1,24 +1,23 @@
 'use strict'
 
-const store = require('../store')
+// const store = require('../store')
 
 const onCreateSuccess = function (data) {
   $('#message').text(data.task.text)
   $('#message2').text('due: ' + data.task.dueDate)
-  $('#create-task-button').hide()
   $('#index-task').show()
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
 }
 
-const onCreateFailure = function (error) {
-  $('#message').text('Error creating task. Try again?')
+const onCreateFailure = function (data) {
+  $('#message').text('error creating task. Try again?')
   $('form').trigger('reset')
 }
 
-function handleClick (cb) {
-  display('Clicked, new value= ' + cb.checked)
-}
+// function handleClick (cb) {
+//   display('Clicked, new value= ' + cb.checked)
+// }
 
 const onIndexSuccess = function (responseData) {
   // console.log(responseData)

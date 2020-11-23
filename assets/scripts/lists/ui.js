@@ -2,38 +2,37 @@
 
 const store = require('../store')
 
-const onCreateSuccessList = function (data) {
+const onCreateListSuccess = function (data) {
   $('#index-list').show()
   $('#message').text('created list')
   $('form').trigger('reset')
-  $('#list-form').trigger('reset')
-
+  $('#create-list').trigger('reset')
 }
 
-const onCreateFailureList = function (error) {
+const onCreateListFailure = function (error) {
   $('#message').text('error creating list. try again?')
   $('form').trigger('reset')
 }
 
-const onIndexSuccessList = function (responseData) {
+const onIndexListSuccess = function (responseData) {
   // console.log(responseData)
   $('#message').text('here are your incomplete lists: ')
   $('#message2').hide()
   $('#response-text').html('')
   responseData.lists.forEach(lists => {
     const list = (`
-      <p>${list.text}</p>
-      <p>ID: ${list._id}</p>
+      <p>${lists.text}</p>
+      <p>ID: ${lists._id}</p>
   `)
     $('#response-text').append(list)
   })
 }
 
-const onIndexFailureList = function (error) {
+const onIndexListFailure = function (error) {
   $('#message').text('error viewing all lists. try again?')
 }
 
-const onShowSuccessList = function (responseData) {
+const onShowListSuccess = function (responseData) {
   $('#response-text').trigger('reset')
   $('#response-text').text('were you looking for?: ' + responseData.list.text)
   $('form').trigger('reset')
@@ -41,46 +40,46 @@ const onShowSuccessList = function (responseData) {
   $('#message2').trigger('reset')
 }
 
-const onShowFailureList = function (error) {
+const onShowListFailure = function (error) {
   $('#message').text('error displaying list')
   $('#response-text').trigger('reset')
   $('form').trigger('reset')
 }
 
-const onDestroySuccessList = function () {
+const onDestroyListSuccess = function () {
   $('form').trigger('reset')
   $('#message').text('list successfully deleted')
   $('#response-text').trigger('reset')
 }
 
-const onDestroyFailureList = function (error) {
+const onDestroyListFailure = function (error) {
   $('#message').text('error deleting list')
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
   $('form').trigger('reset')
 }
 
-const onUpdateSuccessList = function () {
+const onUpdateListSuccess = function () {
   $('#message').text('list successfully updated')
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
 }
 
-const onUpdateFailureList = function (error) {
+const onUpdateListFailure = function (error) {
   $('#message').text('error on updating list')
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
 }
 
 module.exports = {
-  onCreateSuccess,
-  onCreateFailure,
-  onIndexSuccess,
-  onIndexFailure,
-  onShowSuccess,
-  onShowFailure,
-  onDestroySuccess,
-  onDestroyFailure,
-  onUpdateSuccess,
-  onUpdateFailure
+  onCreateListSuccess,
+  onCreateListFailure,
+  onIndexListSuccess,
+  onIndexListFailure,
+  onShowListSuccess,
+  onShowListFailure,
+  onDestroyListSuccess,
+  onDestroyListFailure,
+  onUpdateListSuccess,
+  onUpdateListFailure
 }

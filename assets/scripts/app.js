@@ -8,6 +8,7 @@
 
 const authEvents = require('./auth/events')
 const taskEvents = require('./tasks/events')
+const listEvents = require('./lists/events')
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -19,11 +20,11 @@ $(() => {
   $('#delete-task').on('submit', taskEvents.onDeleteTask)
   $('#update-task').on('submit', taskEvents.onUpdateTask)
   $('#create-task').on('submit', taskEvents.onCreateTask)
-  $('#index-list').on('click', taskEvents.onIndexList)
-  $('#show-list').on('submit', taskEvents.onShowList)
-  $('#delete-list').on('submit', taskEvents.onDeleteList)
-  $('#update-list').on('submit', taskEvents.onUpdateList)
-  $('#create-list').on('submit', taskEvents.onCreateList)
+  $('#index-list').on('click', listEvents.onIndexList)
+  $('#show-list').on('submit', listEvents.onShowList)
+  $('#delete-list').on('submit', listEvents.onDeleteList)
+  $('#update-list').on('submit', listEvents.onUpdateList)
+  $('#create-list').on('submit', listEvents.onCreateList)
 
   // these are hidden by default
   $('#sign-up').hide()
@@ -37,8 +38,7 @@ $(() => {
   $('#response-text').hide()
   $('#navbarDropdown').hide()
   $('#navbar').hide()
-  $('#list-form').hide()
-
+  $('#create-list').hide()
 
   $('#sign-up-button').click(function () {
     $('#sign-up').show()
@@ -123,6 +123,6 @@ $(() => {
 
   $('#create-list-button').click(function () {
     $('#response-text').hide()
-    $('#list-form').show()
+    $('#create-list').show()
   })
 })

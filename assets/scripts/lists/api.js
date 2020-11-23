@@ -57,9 +57,9 @@ const createList = function (data) {
 }
 
 module.exports = {
-  index,
-  show,
-  destroy,
-  update,
-  create
+  indexList,
+  showList,
+  destroyList,
+  updateList,
+  createList
 }

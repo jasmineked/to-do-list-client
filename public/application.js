@@ -16599,25 +16599,25 @@ $(function () {
   $('#delete-task').on('submit', taskEvents.onDeleteTask);
   $('#update-task').on('submit', taskEvents.onUpdateTask);
   $('#create-task').on('submit', taskEvents.onCreateTask);
+  $('#index-list').on('click', taskEvents.onIndexList);
+  $('#show-list').on('submit', taskEvents.onShowList);
+  $('#delete-list').on('submit', taskEvents.onDeleteList);
+  $('#update-list').on('submit', taskEvents.onUpdateList);
+  $('#create-list').on('submit', taskEvents.onCreateList);
 
   // these are hidden by default
   $('#sign-up').hide();
   $('#sign-in').hide();
   $('#sign-out').hide();
   $('#change-pw').hide();
-  $('#change-pw-button').hide();
-  $('#index-task').hide();
   $('#show-task').hide();
   $('#delete-task').hide();
   $('#update-task').hide();
   $('#create-task').hide();
-  $('#create-task-button').hide();
-  $('#show-task-button').hide();
-  $('#update-task-button').hide();
-  $('#delete-task-button').hide();
   $('#response-text').hide();
   $('#navbarDropdown').hide();
   $('#navbar').hide();
+  $('#list-form').hide();
 
   $('#sign-up-button').click(function () {
     $('#sign-up').show();
@@ -16650,9 +16650,6 @@ $(function () {
 
   $('#create-task-button').click(function () {
     $('#create-task').show();
-    $('#delete-task-button').show();
-    $('#create-task-button').show();
-    $('#change-pw').show();
     $('#sign-up').hide();
     $('#sign-in').hide();
     $('#sign-out').show();
@@ -16660,7 +16657,6 @@ $(function () {
     $('#index-task').show();
     $('#delete-task').hide();
     $('#update-task').hide();
-    $('#update-task-button').show();
   });
 
   $('#update-task-button').click(function () {
@@ -16675,7 +16671,7 @@ $(function () {
 
   $('#show-task-button').click(function () {
     $('#show-task').show();
-    $('#change-pw-button').show();
+
     $('#sign-up').hide();
     $('#sign-in').hide();
     $('#sign-out').show();
@@ -16689,8 +16685,6 @@ $(function () {
 
   $('#delete-task-button').click(function () {
     $('#delete-task').show();
-    $('#create-task-button').show();
-    $('#update-task-button').show();
     $('#change-pw').show();
     $('#index-task').show();
     $('#sign-up').hide();
@@ -16704,6 +16698,11 @@ $(function () {
   $('#index-task').click(function () {
     $('#response-text').show();
     $('#change-pw').hide();
+  });
+
+  $('#create-list-button').click(function () {
+    $('#response-text').hide();
+    $('#list-form').show();
   });
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
@@ -16883,10 +16882,6 @@ var signInSuccess = function signInSuccess(data) {
   $('#sign-up-button').hide();
   $('#change-pw-button').show();
   $('#index-task').show();
-  $('#show-task-button').show();
-  $('#update-task-button').show();
-  $('#create-task-button').show();
-  $('#delete-task-button').show();
   $('#response-text').trigger('reset');
   $('#essence').hide();
   $('#show-task').show();

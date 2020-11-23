@@ -7,25 +7,24 @@ const signUpSuccess = function (data) {
   store.user = data.user
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
-  $('#message').text('Welcome', data.user.email)
+  $('#message').text('welcome')
   $('#sign-up').hide()
   $('#sign-in').show()
   $('#sign-in-button').hide()
   $('#sign-up-button').show()
-
 }
 
-const signUpFailure = function (error) {
+const signUpFailure = function (data) {
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
-  $('#message').text('Error signing up')
+  $('#message').text('error signing up')
 }
 
 const signInSuccess = function (data) {
   $('form').trigger('reset')
   store.user = data.user
   $('#navbar').show()
-  $('#message').text('Welcome back', data.user.email)
+  $('#message').text('welcome back')
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#sign-out').show()
@@ -38,7 +37,7 @@ const signInSuccess = function (data) {
   $('#show-task').show()
 }
 const signInFailure = function (data) {
-  $('#message').text('Error on sign in')
+  $('#message').text('error on sign in')
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
 }
@@ -74,14 +73,14 @@ const signOutFailure = function (error) {
 }
 
 const changePwSuccess = function (data) {
-  $('#message').text('Hope you wrote that one down!')
+  $('#message').text('hope you wrote that one down!')
   $('#form').trigger('reset')
   $('#response-text').trigger('reset')
   $('#change-pw').hide()
   $('#response-text').trigger('reset')
 }
 
-const changePwFailure = function (error) {
+const changePwFailure = function (data) {
   $('#response-text').trigger('reset')
   $('#message').text('Try again?')
   $('form').trigger('reset')
