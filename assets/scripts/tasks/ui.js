@@ -1,5 +1,5 @@
 'use strict'
-
+import dateFormat from 'dateformat'
 // const store = require('../store')
 
 const onCreateSuccess = function (data) {
@@ -15,10 +15,11 @@ const onCreateFailure = function (data) {
   $('form').trigger('reset')
 }
 
-// function handleClick (cb) {
-//   display('Clicked, new value= ' + cb.checked)
-// }
+// let handleClick = document.querySelector('checkbox')
 
+// handleClick.addEventListener('click', () => {
+//   let checkbox = document.querySelector('input[type="checkbox"]:checked')
+// })
 const onIndexSuccess = function (responseData) {
   // console.log(responseData)
   $('#message').text('here are your incomplete tasks: ')
@@ -26,9 +27,10 @@ const onIndexSuccess = function (responseData) {
   $('#response-text').html('')
   responseData.tasks.forEach(tasks => {
     const taskList = (`
-      <p></br><label><input type='checkbox' onclick='handleClick(this);' ></label> ${tasks.text}</p>
-      <p>due ${tasks.dueDate}</p>
+      <p></br><label><input type='checkbox' value='task[_id]' onclick='document.getElementById' ></label> ${tasks.text}</p>
+      <p>Due:${dateFormat(tasks.dueDate, 'dddd, mmmm dS, yyyy')}</p>
       <p>ID: ${tasks._id}</p>
+      <input type='submit' class='form-control' value='delete task' id= 'destroycheck'>
   `)
     $('#response-text').append(taskList)
   })
@@ -79,6 +81,7 @@ const onUpdateFailure = function (error) {
 }
 
 module.exports = {
+  //taskList,
   onCreateSuccess,
   onCreateFailure,
   onIndexSuccess,
