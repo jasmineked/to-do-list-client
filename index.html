@@ -39,7 +39,7 @@
                   lists<b class="caret"></b>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#" id='index-list'>view</a>
+                  <a class="dropdown-item" href="#" id='index-list-button'>view</a>
                   <a class="dropdown-item" href="#" id='create-list-button'>create</a>
                   <a class="dropdown-item" href="#" id='update-list-button'>update</a>
                   <a class="dropdown-item" href="#" id='show-list-button'>search</a>
@@ -123,7 +123,7 @@
 <div class='form-group'>
       <form id='delete-task'>
          <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
-          <input type='submit' class='form-control' value='delete task'>
+          <input type='submit' class='form-control' value='delete task' id='destroycheck'>
       </form>
     </div>
 
@@ -141,10 +141,25 @@
 
 <div class='form-group'>
       <form id='create-list'>
-        <input name='list[category]'class='form-control' type='text' placeholder='enter task'>
+        <input name='list[name]'class='form-control' type='text' placeholder='list name'>
         <textarea name='list[description]' class='form-control' type='text'placeholder='description'></textarea>
+        <input name='task[text]'class='form-control' type='text' placeholder='enter task'>
         <input type='submit'class='form-control' value='create list'>
         </form>
       </div>
+      <div class='form-group'>
+            <form id='delete-list'>
+               <input type='text' name='list[_id]' class='form-control' placeholder='enter list id'>
+                <input type='submit' class='form-control' value='delete list'>
+            </form>
+          </div>
+          <div class='form-group'>
+                <form id='update-list'>
+                    <input type='text' name='list[_id]' class='form-control' placeholder='enter list id'>
+                    <input type='text' name='list[name]' class='form-control' placeholder='enter new name for list'>
+                    <input type='date' name='list[description]' class='form-control' placeholder='enter decription'>
+                    <input type='submit' class='form-control' value='update list'>
+                  </div>
+                      </form>
     </body>
 </html>
