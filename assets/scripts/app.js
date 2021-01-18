@@ -39,6 +39,11 @@ $(() => {
   $('#navbarDropdown').hide()
   $('#navbar').hide()
   $('#create-list').hide()
+  $('#index-list').hide()
+  $('#show-list').hide()
+  $('#delete-list').hide()
+  $('#update-list').hide()
+  $('#create-list').hide()
 
   $('#sign-up-button').click(function () {
     $('#sign-up').show()
@@ -116,13 +121,38 @@ $(() => {
     $('#create-task').hide()
   })
 
-  $('#index-task').click(function () {
+  $('#index-task-button').click(function () {
     $('#response-text').show()
+    $('#index-task').show()
     $('#change-pw').hide()
   })
 
   $('#create-list-button').click(function () {
     $('#response-text').hide()
     $('#create-list').show()
+  })
+
+  $('#delete-list-button').click(function () {
+    $('#response-text').hide()
+    $('#delete-list').show()
+  })
+
+  $('#update-list-button').click(function () {
+    $('#response-text').hide()
+    $('#update-list').show()
+  })
+
+  $('#show-list-button').click(function () {
+    $('#response-text').hide()
+    $('#show-list').show()
+  })
+
+  $('#index-list').click(function () {
+    $('#response-text').show()
+    $('#update-list').hide()
+    $('#create-list').hide()
+    $('#delete-list').hide()
+    $('#show-list').hide()
+
   })
 })
