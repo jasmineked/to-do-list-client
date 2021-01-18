@@ -61,13 +61,13 @@ const signOutSuccess = function () {
   $('#update-task-button').hide()
   $('#delete-task-button').hide()
   $('#response-text').hide()
-  $('#navbar').hide()
+  // $('#navbar').hide()
   $('#essence').show()
   store.user = null
 }
 
 const signOutFailure = function (error) {
-  $('#message').text('Guess you\'re stuck with us...')
+  $('#message').text('Error: ' + error)
   $('form').trigger('reset')
   $('#response-text').hide()
 }
