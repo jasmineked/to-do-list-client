@@ -15,12 +15,14 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#change-pw').on('submit', authEvents.onChangePw)
+
   $('#index-task').on('click', taskEvents.onIndexTask)
   $('#show-task').on('submit', taskEvents.onShowTask)
   $('#delete-task').on('submit', taskEvents.onDeleteTask)
   $('#update-task').on('submit', taskEvents.onUpdateTask)
   $('#create-task').on('submit', taskEvents.onCreateTask)
-  $('#index-list').on('click', listEvents.onIndexList)
+
+  $('#index-list-button').on('click', listEvents.onIndexList)
   $('#show-list').on('submit', listEvents.onShowList)
   $('#delete-list').on('submit', listEvents.onDeleteList)
   $('#update-list').on('submit', listEvents.onUpdateList)
@@ -37,7 +39,7 @@ $(() => {
   $('#create-task').hide()
   $('#response-text').hide()
   $('#navbarDropdown').hide()
-  $('#navbar').hide()
+  // $('#navbar').hide()
   $('#create-list').hide()
   $('#index-list').hide()
   $('#show-list').hide()
@@ -45,6 +47,37 @@ $(() => {
   $('#update-list').hide()
   $('#create-list').hide()
 
+  // assign ID to these authenticated actions to condense this section & improve semantics
+  $('#create-task-button').hide()
+  $('#index-task').hide()
+  $('#update-task-button').hide()
+  $('#delete-task-button').hide()
+  $('#index-list-button').hide()
+  $('#listNavDropdown').hide()
+  $('#settingsNavDropdown').hide()
+
+  // assign ID to these Unauthenticated actions to condense
+  $('#nav-sign-up').show()
+  $('#nav-sign-in').show()
+
+  // NAVBAR AUTH
+  $('#nav-sign-up').click(function () {
+    $('#sign-up').show()
+    $('#message').text('already joined?')
+    $('#sign-up-button').hide()
+    $('#sign-in').hide()
+    $('#sign-in-button').show()
+  })
+
+  $('#nav-sign-in').click(function () {
+    $('#sign-in').show()
+    $('#message').text('not a member?')
+    $('#sign-in-button').hide()
+    $('#sign-up').hide()
+    $('#sign-up-button').show()
+  })
+  // starts here
+  // AUTH
   $('#sign-up-button').click(function () {
     $('#sign-up').show()
     $('#sign-in-button').show()
@@ -73,7 +106,10 @@ $(() => {
     $('#create-task').hide()
     $('#response-text').hide()
   })
-
+// $('#sign-out').click(function () {
+//   $('')
+// })
+  // Tasks
   $('#create-task-button').click(function () {
     $('#create-task').show()
     $('#sign-up').hide()
@@ -147,12 +183,8 @@ $(() => {
     $('#show-list').show()
   })
 
-  $('#index-list').click(function () {
+  $('#index-list-button').click(function () {
+    $('#index-list').show()
     $('#response-text').show()
-    $('#update-list').hide()
-    $('#create-list').hide()
-    $('#delete-list').hide()
-    $('#show-list').hide()
-
   })
 })
