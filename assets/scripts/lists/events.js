@@ -6,8 +6,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const onIndexList = function () {
   event.preventDefault()
-
-  api.indexList()
+  api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onIndexFailure)
 }
@@ -17,7 +16,7 @@ const onShowList = function (event) {
   const form = (event.target)
   const data = getFormFields(form)
 
-  api.showList(data)
+  api.show(data)
     .then(ui.onShowSuccess)
     .catch(ui.onShowFailure)
 }
@@ -25,8 +24,7 @@ const onShowList = function (event) {
 const onDeleteList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.destroyList(data)
-
+  api.destroy(data)
     .then(ui.onDestroySuccess)
     .catch(ui.onDestroyFailure)
 }
@@ -34,7 +32,7 @@ const onDeleteList = function (event) {
 const onUpdateList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.updateList(data)
+  api.update(data)
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
 }
@@ -43,9 +41,9 @@ const onCreateList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log(data)
-  api.createList(data)
-    .then(ui.onCreateSuccess)
-    .catch(ui.onCreateFailure)
+  api.create(data)
+    .then(ui.onCreateListSuccess)
+    .catch(ui.onCreateListFailure)
 }
 
 module.exports = {
