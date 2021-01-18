@@ -4,7 +4,6 @@ const config = require('../config')
 const store = require('../store')
 
 const index = function () {
-  // make GET request to /tasks
   return $.ajax({
     url: config.apiUrl + '/tasks',
     method: 'GET',
