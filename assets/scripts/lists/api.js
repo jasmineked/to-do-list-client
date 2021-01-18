@@ -3,8 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const indexList = function () {
-  // make GET request to /tasks
+const index = function () {
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'GET',
@@ -14,7 +13,7 @@ const indexList = function () {
   })
 }
 
-const showList = function (data) {
+const show = function (data) {
   return $.ajax({
     url: config.apiUrl + '/lists/' + data.index._id,
     method: 'GET',
@@ -24,7 +23,7 @@ const showList = function (data) {
   })
 }
 
-const destroyList = function (data) {
+const destroy = function (data) {
   return $.ajax({
     url: config.apiUrl + '/lists/' + data.index._id,
     method: 'DELETE',
@@ -34,7 +33,7 @@ const destroyList = function (data) {
   })
 }
 
-const updateList = function (data) {
+const update = function (data) {
   return $.ajax({
     url: config.apiUrl + '/lists/' + data.index._id,
     method: 'PATCH',
@@ -45,7 +44,7 @@ const updateList = function (data) {
   })
 }
 
-const createList = function (data) {
+const create = function (data) {
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'POST',
@@ -57,9 +56,9 @@ const createList = function (data) {
 }
 
 module.exports = {
-  indexList,
-  showList,
-  destroyList,
-  updateList,
-  createList
+  index,
+  show,
+  destroy,
+  update,
+  create
 }
