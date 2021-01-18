@@ -15,7 +15,7 @@ const index = function () {
 
 const show = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/lists/' + data.index._id,
+    url: config.apiUrl + '/lists/' + data.list._id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -25,7 +25,7 @@ const show = function (data) {
 
 const destroy = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/lists/' + data.index._id,
+    url: config.apiUrl + '/lists/' + data.list._id,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -35,7 +35,7 @@ const destroy = function (data) {
 
 const update = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/lists/' + data.index._id,
+    url: config.apiUrl + '/lists/' + data.list._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
