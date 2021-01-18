@@ -106,9 +106,9 @@ $(() => {
     $('#create-task').hide()
     $('#response-text').hide()
   })
-// $('#sign-out').click(function () {
-//   $('')
-// })
+  // $('#sign-out').click(function () {
+  //   $('')
+  // })
   // Tasks
   $('#create-task-button').click(function () {
     $('#create-task').show()

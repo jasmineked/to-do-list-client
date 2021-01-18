@@ -35,6 +35,8 @@ const signInSuccess = function (data) {
   $('#response-text').trigger('reset')
   $('#essence').hide()
   $('#show-task').show()
+  $('#nav-sign-up').hide()
+  $('#nav-sign-in').hide()
 }
 const signInFailure = function (data) {
   $('#message').text('error on sign in')
@@ -43,6 +45,7 @@ const signInFailure = function (data) {
 }
 
 const signOutSuccess = function () {
+  // can i create an ID for all of this or at least group each resource together to condense this snippet
   $('form').trigger('reset')
   $('#message').text('see you soon')
   $('#sign-out').hide()
@@ -62,6 +65,8 @@ const signOutSuccess = function () {
   $('#delete-task-button').hide()
   $('#response-text').hide()
   // $('#navbar').hide()
+  $('#nav-sign-in').show()
+  $('#nav-sign-up').show()
   $('#essence').show()
   store.user = null
 }
