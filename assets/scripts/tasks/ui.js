@@ -27,17 +27,17 @@ const onIndexSuccess = function (responseData) {
   $('#response-text').html('')
   responseData.tasks.forEach(tasks => {
     const taskList = (`
-      <p></br><label><input type='checkbox' value='task[_id]' onclick='document.getElementById' ></label> ${tasks.text}</p>
+      <p></br><label><input type='checkbox' value='task[_id]' onclick='document.getElementById'></label> ${tasks.text}</p>
       <p>Due:${dateFormat(tasks.dueDate, 'dddd, mmmm dS, yyyy')}</p>
       <p>ID: ${tasks._id}</p>
-      <input type='submit' class='form-control' value='delete task' id= 'destroycheck'>
+      <input type='submit' class='form-control' value='delete task' id= 'delete-task-button'>
   `)
     $('#response-text').append(taskList)
   })
 }
 
 const onIndexFailure = function (error) {
-  $('#message').text('error viewing all tasks. try again?')
+  $('#message').text('Error: ' + error + ' Try Again?')
 }
 
 const onShowSuccess = function (responseData) {
@@ -50,7 +50,7 @@ const onShowSuccess = function (responseData) {
 }
 
 const onShowFailure = function (error) {
-  $('#message').text('error displaying task')
+  $('#message').text('Error: ' + error + ' Try Again?')
   $('#response-text').trigger('reset')
   $('form').trigger('reset')
 }
@@ -62,7 +62,7 @@ const onDestroySuccess = function () {
 }
 
 const onDestroyFailure = function (error) {
-  $('#message').text('error deleting task')
+  $('#message').text('Error: ' + error + ' Try Again?')
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
   $('form').trigger('reset')
@@ -75,13 +75,12 @@ const onUpdateSuccess = function () {
 }
 
 const onUpdateFailure = function (error) {
-  $('#message').text('error on updating task')
+  $('#message').text('Error: ' + error + ' Try Again?')
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
 }
 
 module.exports = {
-  //taskList,
   onCreateSuccess,
   onCreateFailure,
   onIndexSuccess,
