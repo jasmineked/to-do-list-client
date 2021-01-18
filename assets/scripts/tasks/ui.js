@@ -41,7 +41,7 @@ const onIndexFailure = function (error) {
 }
 
 const onShowSuccess = function (responseData) {
-  // can we find a way to implement a scrollbar to #responsetext so that
+  // can we find a way to implement a scrollbar to #responsetext
   $('#response-text').trigger('reset')
   $('#response-text').text('were you looking for?: ' + responseData.task.text)
   $('form').trigger('reset')

@@ -1,7 +1,5 @@
 'use strict'
 
-const store = require('../store')
-
 const onCreateListSuccess = function (data) {
   $('#index-list').show()
   $('#message').text('created list')
@@ -10,18 +8,18 @@ const onCreateListSuccess = function (data) {
 }
 
 const onCreateListFailure = function (error) {
-  $('#message').text('error creating list. try again?')
+  $('#message').text('Error: ' + error + ' Try Again?')
   $('form').trigger('reset')
 }
 
 const onIndexListSuccess = function (responseData) {
-  // console.log(responseData)
+  console.log(responseData)
   $('#message').text('here are your incomplete lists: ')
   $('#message2').hide()
   $('#response-text').html('')
   responseData.lists.forEach(lists => {
     const list = (`
-      <p>${lists.text}</p>
+      <p>${lists.name}</p>
       <p>ID: ${lists._id}</p>
   `)
     $('#response-text').append(list)
@@ -29,7 +27,7 @@ const onIndexListSuccess = function (responseData) {
 }
 
 const onIndexListFailure = function (error) {
-  $('#message').text('error viewing all lists. try again?')
+  $('#message').text('Error: ' + error + ' Try Again?')
 }
 
 const onShowListSuccess = function (responseData) {
@@ -41,7 +39,7 @@ const onShowListSuccess = function (responseData) {
 }
 
 const onShowListFailure = function (error) {
-  $('#message').text('error displaying list')
+  $('#message').text('Error: ' + error + ' Try Again?')
   $('#response-text').trigger('reset')
   $('form').trigger('reset')
 }
@@ -53,7 +51,7 @@ const onDestroyListSuccess = function () {
 }
 
 const onDestroyListFailure = function (error) {
-  $('#message').text('error deleting list')
+  $('#message').text('Error: ' + error + ' Try Again?')
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
   $('form').trigger('reset')
@@ -66,7 +64,7 @@ const onUpdateListSuccess = function () {
 }
 
 const onUpdateListFailure = function (error) {
-  $('#message').text('error on updating list')
+  $('#message').text('Error: ' + error + ' Try Again?')
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
 }
