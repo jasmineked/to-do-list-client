@@ -121,7 +121,7 @@ $(() => {
     $('#create-task').hide()
   })
 
-  $('#index-task-button').click(function () {
+  $('#index-task').click(function () {
     $('#response-text').show()
     $('#index-task').show()
     $('#change-pw').hide()
