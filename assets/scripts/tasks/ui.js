@@ -26,13 +26,13 @@ const onIndexSuccess = function (responseData) {
   $('#message2').hide()
   $('#response-text').html('')
   responseData.tasks.forEach(tasks => {
-    const taskList = (`
+    const viewTasks = (`
       <p></br><label><input type='checkbox' value='task[_id]' onclick='document.getElementById'></label> ${tasks.text}</p>
       <p>Due:${dateFormat(tasks.dueDate, 'dddd, mmmm dS, yyyy')}</p>
       <p>ID: ${tasks._id}</p>
       <input type='submit' class='form-control' value='delete task' id= 'delete-task-button'>
   `)
-    $('#response-text').append(taskList)
+    $('#response-text').append(viewTasks)
   })
 }
 
