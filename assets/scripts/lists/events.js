@@ -7,8 +7,8 @@ const getFormFields = require('../../../lib/get-form-fields')
 const onIndexList = function () {
   event.preventDefault()
   api.index()
-    .then(ui.onIndexSuccess)
-    .catch(ui.onIndexFailure)
+    .then(ui.onIndexListSuccess)
+    .catch(ui.onIndexListFailure)
 }
 
 const onShowList = function (event) {
@@ -17,24 +17,24 @@ const onShowList = function (event) {
   const data = getFormFields(form)
 
   api.show(data)
-    .then(ui.onShowSuccess)
-    .catch(ui.onShowFailure)
+    .then(ui.onShowListSuccess)
+    .catch(ui.onShowListFailure)
 }
 
 const onDeleteList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.destroy(data)
-    .then(ui.onDestroySuccess)
-    .catch(ui.onDestroyFailure)
+    .then(ui.onDestroyListSuccess)
+    .catch(ui.onDestroyListFailure)
 }
 
 const onUpdateList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.update(data)
-    .then(ui.onUpdateSuccess)
-    .catch(ui.onUpdateFailure)
+    .then(ui.onUpdateListSuccess)
+    .catch(ui.onUpdateListFailure)
 }
 
 const onCreateList = function (event) {

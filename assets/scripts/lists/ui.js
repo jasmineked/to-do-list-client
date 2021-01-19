@@ -18,11 +18,11 @@ const onIndexListSuccess = function (responseData) {
   $('#message2').hide()
   $('#response-text').html('')
   responseData.lists.forEach(lists => {
-    const list = (`
+    const viewLists = (`
       <p>${lists.name}</p>
       <p>ID: ${lists._id}</p>
   `)
-    $('#response-text').append(list)
+    $('#response-text').append(viewLists)
   })
 }
 
@@ -32,7 +32,7 @@ const onIndexListFailure = function (error) {
 
 const onShowListSuccess = function (responseData) {
   $('#response-text').trigger('reset')
-  $('#response-text').text('were you looking for?: ' + responseData.list.text)
+  $('#response-text').text('were you looking for?: ' + responseData.list.name)
   $('form').trigger('reset')
   $('#message').trigger('reset')
   $('#message2').trigger('reset')
