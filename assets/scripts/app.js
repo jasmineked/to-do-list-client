@@ -102,9 +102,6 @@ $(() => {
 
   $('#change-pw-button').click(function () {
     $('#change-pw').show()
-    $('#sign-up').hide()
-    $('#sign-in').hide()
-    $('#sign-out').show()
     $('#index-task').show()
     $('#show-task').hide()
     $('#delete-task').hide()
@@ -118,9 +115,6 @@ $(() => {
   // Tasks
   $('#create-task-button').click(function () {
     $('#create-task').show()
-    $('#sign-up').hide()
-    $('#sign-in').hide()
-    $('#sign-out').show()
     $('#change-pw').hide()
     $('#index-task').show()
     $('#delete-task').hide()
@@ -129,9 +123,6 @@ $(() => {
 
   $('#update-task-button').click(function () {
     $('#update-task').show()
-    $('#sign-up').hide()
-    $('#sign-in').hide()
-    $('#sign-out').show()
     $('#change-pw').hide()
     $('#delete-task').hide()
     $('#create-task').hide()
@@ -139,10 +130,6 @@ $(() => {
 
   $('#show-task-button').click(function () {
     $('#show-task').show()
-
-    $('#sign-up').hide()
-    $('#sign-in').hide()
-    $('#sign-out').show()
     $('#change-pw').hide()
     $('#index-task').show()
     $('#delete-task').hide()
@@ -155,9 +142,6 @@ $(() => {
     $('#delete-task').show()
     $('#change-pw').show()
     $('#index-task').show()
-    $('#sign-up').hide()
-    $('#sign-in').hide()
-    $('#sign-out').show()
     $('#change-pw').hide()
     $('#update-task').hide()
     $('#create-task').hide()
@@ -170,23 +154,32 @@ $(() => {
   })
 
   $('#create-list-button').click(function () {
-    $('#response-text').hide()
     $('#create-list').show()
+    $('#response-text').hide()
+    $('#delete-list').hide()
+    $('#update-task').hide()
   })
 
   $('#delete-list-button').click(function () {
-    $('#response-text').hide()
     $('#delete-list').show()
+    $('#response-text').hide()
+    $('#create-task').hide()
+    $('#update-task').hide()
   })
 
   $('#update-list-button').click(function () {
-    $('#response-text').hide()
     $('#update-list').show()
+    $('#response-text').hide()
+    $('#create-task').hide()
+    $('#delete-task').hide()
   })
 
   $('#show-list-button').click(function () {
-    $('#response-text').hide()
     $('#show-list').show()
+    $('#response-text').hide()
+    $('#create-task').hide()
+    $('#delete-task').hide()
+    $('$index-task').hide()
   })
 
   $('#index-list-button').click(function () {
