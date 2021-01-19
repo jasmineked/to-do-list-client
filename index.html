@@ -12,6 +12,7 @@
       <script src='public/application.js' type='text/javascript' charset='utf-8' defer></script>
     </head>
     <body>
+      <!-- NAVBAR -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light" id='navbar'>
         <a class="navbar-brand" href="#">essənse.</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,6 +23,7 @@
             <li class="nav-item">
               <a class="nav-link disabled" href="#">own every moment.</a>
             </li>
+            <!-- TASK LINKS -->
               <li class="nav-item">
                 <a class="nav-link" id='create-task-button' href="#">create</a>
               </li>
@@ -34,6 +36,7 @@
               <li class="nav-item">
                 <a class="nav-link" id='delete-task-button' href="#">delete</a>
               </li>
+              <!-- LIST LINK (INDEX) -->
               <li class="nav-item">
                 <a class="nav-link" id='index-list-button' href="#">view lists</a>
               </li>
@@ -48,7 +51,9 @@
                   <a class="dropdown-item" href="#" id='show-list-button'>search</a>
                   <a class="dropdown-item" href="#" id='delete-list-button'>delete</a>
                 </div>
+                <!--  -->
               </li>
+              <!-- AUTH LINKS -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="settingsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             settings<b class="caret"></b>
@@ -67,18 +72,24 @@
           <a class='nav-link' id='nav-sign-in' href='#'>sign in.</a>
         </li>
       </ul>
+      <!--  -->
+
+      <!-- SHOW TASK SEARCHBAR -->
       <form class="form-inline my-2 my-lg-0" id='show-task'>
           <input name='task[_id]' type='text' class='form-control' placeholder='enter task id'  aria-label="Search">
           <input class="btn btn-outline-success my-2 my-sm-0" type='submit' class='form-control' value='search' placeholder="search">
       </form>
     </div>
   </nav>
+  <!--  -->
+
+  <!-- HEADER LOGO THINGY -->
 <div id='essence'>
 <h1>essence.</h1>
 <h4>/ˈesəns/</h4>
 <p>own every moment.</p>
 </div>
-
+<!-- DISPLAY MESSAGES, RESPONSE -->
       <div class='messages'>
     <p id='message'></p>
     <p id='message2'></p>
@@ -86,7 +97,9 @@
 
       <button id='sign-up-button' class= 'btn btn-secondary' type='button'>start today</button>
       <button id='sign-in-button' class= 'btn btn-secondary' type='button'>sign in</button>
+<!--  -->
 
+      <!-- AUTH FORMS -->
    <form id='sign-up'>
      <div class='form-group'>
    <input type='email' name='credentials[email]' class='form-control' placeholder='enter email'>
@@ -120,6 +133,9 @@
 <input type='password' name='passwords[new]' class='form-control' placeholder='confirm password'>
 <input type='submit' class='form-control' value='confirm'>
 </form>
+<!--  -->
+
+<!-- TASKS FORMS -->
 
 <div class='form-group'>
       <form id='create-task'>
@@ -147,7 +163,9 @@
 <div class='container' id='list-here'></div>
       <div class='container' id='response-text'>
       </div>
+      <!--  -->
 
+      <!-- LIST FORMS -->
 <div class='form-group'>
       <form id='create-list'>
         <input name='list[name]'class='form-control' type='text' placeholder='list name'>
@@ -171,5 +189,6 @@
                     
                   </div>
                       </form>
+                      <!--  -->
     </body>
 </html>

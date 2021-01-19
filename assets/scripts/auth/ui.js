@@ -21,22 +21,35 @@ const signUpFailure = function (data) {
 }
 
 const signInSuccess = function (data) {
+  // response
   $('form').trigger('reset')
   store.user = data.user
-  $('#navbar').show()
   $('#message').text('welcome back')
+  $('#response-text').trigger('reset')
+  $('#essence').hide()
+
+  // auth actions
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#sign-out').show()
   $('#sign-in-button').hide()
   $('#sign-up-button').hide()
   $('#change-pw-button').show()
-  $('#index-task').show()
-  $('#response-text').trigger('reset')
-  $('#essence').hide()
-  $('#show-task').show()
   $('#nav-sign-up').hide()
   $('#nav-sign-in').hide()
+
+  // task actions
+  $('#index-task').show()
+  $('#create-task-button').show()
+  $('#show-task-button').show()
+  $('#update-task-button').show()
+  $('#delete-task-button').show()
+  $('#show-task').show()
+
+  // list actions
+  $('#index-list-button').show()
+  $('#listNavDropdown').show()
+  $('#settingsNavDropdown').show()
 }
 const signInFailure = function (data) {
   $('#message').text('error on sign in')
@@ -45,15 +58,23 @@ const signInFailure = function (data) {
 }
 
 const signOutSuccess = function () {
-  // can i create an ID for all of this or at least group each resource together to condense this snippet
+  // response
   $('form').trigger('reset')
+  $('#response-text').hide()
+  $('#essence').show()
   $('#message').text('see you soon')
+
+  // auth
   $('#sign-out').hide()
   $('#sign-up-button').show()
   $('#sign-in-button').show()
+  $('#nav-sign-in').show()
+  $('#nav-sign-up').show()
   $('#sign-out').hide()
   $('#change-pw').hide()
   $('#change-pw-button').hide()
+
+  // task
   $('#index-task').hide()
   $('#show-task').hide()
   $('#delete-task').hide()
@@ -63,11 +84,13 @@ const signOutSuccess = function () {
   $('#show-task-button').hide()
   $('#update-task-button').hide()
   $('#delete-task-button').hide()
-  $('#response-text').hide()
-  // $('#navbar').hide()
-  $('#nav-sign-in').show()
-  $('#nav-sign-up').show()
-  $('#essence').show()
+
+  // list
+  $('#create-list').hide()
+  $('#update-list').hide()
+  $('#index-list-button').hide()
+  $('#listNavDropdown').hide()
+  $('#settingsNavDropdown').hide()
   store.user = null
 }
 
@@ -78,7 +101,7 @@ const signOutFailure = function (error) {
 }
 
 const changePwSuccess = function (data) {
-  $('#message').text('hope you wrote that one down!')
+  $('#message').text('Password successfully changed.')
   $('#form').trigger('reset')
   $('#response-text').trigger('reset')
   $('#change-pw').hide()

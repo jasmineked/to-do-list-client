@@ -11,16 +11,22 @@ const taskEvents = require('./tasks/events')
 const listEvents = require('./lists/events')
 
 $(() => {
+  // AUth
+
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#change-pw').on('submit', authEvents.onChangePw)
+
+  // Tasks
 
   $('#index-task').on('click', taskEvents.onIndexTask)
   $('#show-task').on('submit', taskEvents.onShowTask)
   $('#delete-task').on('submit', taskEvents.onDeleteTask)
   $('#update-task').on('submit', taskEvents.onUpdateTask)
   $('#create-task').on('submit', taskEvents.onCreateTask)
+
+  // Lists
 
   $('#index-list-button').on('click', listEvents.onIndexList)
   $('#show-list').on('submit', listEvents.onShowList)
