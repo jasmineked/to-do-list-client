@@ -151,6 +151,7 @@ $(() => {
     $('#change-pw').hide()
   })
 
+  // Lists
   $('#create-list-button').click(function () {
     $('#create-list').show()
     $('#response-text').hide()

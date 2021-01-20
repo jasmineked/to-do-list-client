@@ -184,9 +184,15 @@
                 <form id='update-list'>
                     <input type='text' name='list[_id]' class='form-control' placeholder='enter list id'>
                     <input type='text' name='list[name]' class='form-control' placeholder='enter new name for list'>
-                    <input type='date' name='list[description]' class='form-control' placeholder='enter decription'>
+                    <input type='text' name='list[description]' class='form-control' placeholder='enter updated description'>
+                    <input type= 'text' name= 'tasks[text]' class='form-control' placeholder='update task'>
+                    <input type= 'date' name= 'tasks[date]' class='form-control' placeholder='update task'>
                     <input type='submit' class='form-control' value='update list'>
-                    
+<!-- the id of the search button is "show-list-button". loated in navbar -->
+                    <form class="form-inline my-2 my-lg-0" id='show-list'>
+                      <input name='list[_id]' type='text' class='form-control' placeholder='enter list id'  aria-label="Search">
+                      <input class="btn btn-outline-success my-2 my-sm-0" type='submit' class='form-control' value='search' placeholder="search">
+                  </form>
                   </div>
                       </form>
                       <!--  -->
