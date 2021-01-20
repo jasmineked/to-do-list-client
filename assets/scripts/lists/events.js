@@ -5,8 +5,8 @@ const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onIndexList = function () {
-  event.preventDefault()
-  api.index()
+  // event.preventDefault()
+  api.indexList()
     .then(ui.onIndexListSuccess)
     .catch(ui.onIndexListFailure)
 }
@@ -16,7 +16,7 @@ const onShowList = function (event) {
   const form = (event.target)
   const data = getFormFields(form)
 
-  api.show(data)
+  api.showList(data)
     .then(ui.onShowListSuccess)
     .catch(ui.onShowListFailure)
 }
@@ -24,7 +24,7 @@ const onShowList = function (event) {
 const onDeleteList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.destroy(data)
+  api.destroyList(data)
     .then(ui.onDestroyListSuccess)
     .catch(ui.onDestroyListFailure)
 }
@@ -32,7 +32,7 @@ const onDeleteList = function (event) {
 const onUpdateList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.update(data)
+  api.updateList(data)
     .then(ui.onUpdateListSuccess)
     .catch(ui.onUpdateListFailure)
 }
@@ -41,7 +41,7 @@ const onCreateList = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log(data)
-  api.create(data)
+  api.createList(data)
     .then(ui.onCreateListSuccess)
     .catch(ui.onCreateListFailure)
 }

@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const index = function () {
+const indexList = function () {
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'GET',
@@ -13,7 +13,7 @@ const index = function () {
   })
 }
 
-const show = function (data) {
+const showList = function (data) {
   return $.ajax({
     url: config.apiUrl + '/lists/' + data.list._id,
     method: 'GET',
@@ -23,7 +23,7 @@ const show = function (data) {
   })
 }
 
-const destroy = function (data) {
+const destroyList = function (data) {
   return $.ajax({
     url: config.apiUrl + '/lists/' + data.list._id,
     method: 'DELETE',
@@ -33,7 +33,7 @@ const destroy = function (data) {
   })
 }
 
-const update = function (data) {
+const updateList = function (data) {
   return $.ajax({
     url: config.apiUrl + '/lists/' + data.list._id,
     method: 'PATCH',
@@ -44,7 +44,7 @@ const update = function (data) {
   })
 }
 
-const create = function (data) {
+const createList = function (data) {
   return $.ajax({
     url: config.apiUrl + '/lists',
     method: 'POST',
@@ -56,9 +56,9 @@ const create = function (data) {
 }
 
 module.exports = {
-  index,
-  show,
-  destroy,
-  update,
-  create
+  indexList,
+  showList,
+  destroyList,
+  updateList,
+  createList
 }

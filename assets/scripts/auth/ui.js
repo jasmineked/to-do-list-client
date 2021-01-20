@@ -1,10 +1,11 @@
 'use strict'
 // here, we handle the API response
 const store = require('../store')
-
+const { onIndexList } = require('../lists/events')
 // the following are success & failure handler functions
 const signUpSuccess = function (data) {
   store.user = data.user
+  onIndexList()
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
   $('#message').text('welcome')
@@ -24,8 +25,10 @@ const signInSuccess = function (data) {
   // response
   $('form').trigger('reset')
   store.user = data.user
+  onIndexList()
   $('#message').text('welcome back')
   $('#response-text').trigger('reset')
+  $('#response-text').show()
   $('#essence').hide()
 
   // auth actions
@@ -37,6 +40,7 @@ const signInSuccess = function (data) {
   $('#change-pw-button').show()
   $('#nav-sign-up').hide()
   $('#nav-sign-in').hide()
+  $('#settingsNavDropdown').show()
 
   // task actions
   $('#index-task').show()
@@ -49,7 +53,6 @@ const signInSuccess = function (data) {
   // list actions
   $('#index-list-button').show()
   $('#listNavDropdown').show()
-  $('#settingsNavDropdown').show()
 }
 const signInFailure = function (data) {
   $('#message').text('error on sign in')

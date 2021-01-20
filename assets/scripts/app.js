@@ -12,7 +12,6 @@ const listEvents = require('./lists/events')
 
 $(() => {
   // AUth
-
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('click', authEvents.onSignOut)
@@ -27,7 +26,6 @@ $(() => {
   $('#create-task').on('submit', taskEvents.onCreateTask)
 
   // Lists
-
   $('#index-list-button').on('click', listEvents.onIndexList)
   $('#show-list').on('submit', listEvents.onShowList)
   $('#delete-list').on('submit', listEvents.onDeleteList)
@@ -35,6 +33,7 @@ $(() => {
   $('#create-list').on('submit', listEvents.onCreateList)
 
   // these are hidden by default
+  // if it doesnt end with button or any other specification, it is a form. edit for semantics
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#sign-out').hide()
@@ -45,7 +44,6 @@ $(() => {
   $('#create-task').hide()
   $('#response-text').hide()
   $('#navbarDropdown').hide()
-  // $('#navbar').hide()
   $('#create-list').hide()
   $('#index-list').hide()
   $('#show-list').hide()
@@ -62,7 +60,7 @@ $(() => {
   $('#listNavDropdown').hide()
   $('#settingsNavDropdown').hide()
 
-  // assign ID to these Unauthenticated actions to condense
+  // sign in & signup links on navbar
   $('#nav-sign-up').show()
   $('#nav-sign-in').show()
 
@@ -82,7 +80,7 @@ $(() => {
     $('#sign-up').hide()
     $('#sign-up-button').show()
   })
-  // starts here
+  // start
   // AUTH
   $('#sign-up-button').click(function () {
     $('#sign-up').show()

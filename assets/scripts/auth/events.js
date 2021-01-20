@@ -32,7 +32,6 @@ const onSignOut = function (event) {
 
 const onChangePw = function (event) {
   event.preventDefault()
-
   const data = getFormFields(this)
   api.changePw(data)
     .then(ui.changePwSuccess)
