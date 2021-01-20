@@ -17,15 +17,21 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#change-pw').on('submit', authEvents.onChangePw)
 
+<<<<<<< HEAD
   // Tasks
 
+=======
+>>>>>>> main
   $('#index-task').on('click', taskEvents.onIndexTask)
   $('#show-task').on('submit', taskEvents.onShowTask)
   $('#delete-task').on('submit', taskEvents.onDeleteTask)
   $('#update-task').on('submit', taskEvents.onUpdateTask)
   $('#create-task').on('submit', taskEvents.onCreateTask)
 
+<<<<<<< HEAD
   // Lists
+=======
+>>>>>>> main
   $('#index-list-button').on('click', listEvents.onIndexList)
   $('#show-list').on('submit', listEvents.onShowList)
   $('#delete-list').on('submit', listEvents.onDeleteList)
@@ -44,6 +50,10 @@ $(() => {
   $('#create-task').hide()
   $('#response-text').hide()
   $('#navbarDropdown').hide()
+<<<<<<< HEAD
+=======
+  // $('#navbar').hide()
+>>>>>>> main
   $('#create-list').hide()
   $('#index-list').hide()
   $('#show-list').hide()
@@ -60,7 +70,11 @@ $(() => {
   $('#listNavDropdown').hide()
   $('#settingsNavDropdown').hide()
 
+<<<<<<< HEAD
   // sign in & signup links on navbar
+=======
+  // assign ID to these Unauthenticated actions to condense
+>>>>>>> main
   $('#nav-sign-up').show()
   $('#nav-sign-in').show()
 
@@ -80,7 +94,11 @@ $(() => {
     $('#sign-up').hide()
     $('#sign-up-button').show()
   })
+<<<<<<< HEAD
   // start
+=======
+  // starts here
+>>>>>>> main
   // AUTH
   $('#sign-up-button').click(function () {
     $('#sign-up').show()
@@ -107,9 +125,15 @@ $(() => {
     $('#create-task').hide()
     $('#response-text').hide()
   })
+<<<<<<< HEAD
   // $('#sign-out').click(function () {
   //   $('')
   // })
+=======
+// $('#sign-out').click(function () {
+//   $('')
+// })
+>>>>>>> main
   // Tasks
   $('#create-task-button').click(function () {
     $('#create-task').show()

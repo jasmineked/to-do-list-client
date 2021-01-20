@@ -87,6 +87,7 @@ const signOutSuccess = function () {
   $('#show-task-button').hide()
   $('#update-task-button').hide()
   $('#delete-task-button').hide()
+<<<<<<< HEAD
 
   // list
   $('#create-list').hide()
@@ -94,6 +95,11 @@ const signOutSuccess = function () {
   $('#index-list-button').hide()
   $('#listNavDropdown').hide()
   $('#settingsNavDropdown').hide()
+=======
+  $('#response-text').hide()
+  // $('#navbar').hide()
+  $('#essence').show()
+>>>>>>> main
   store.user = null
 }
 
