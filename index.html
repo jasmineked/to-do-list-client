@@ -23,37 +23,16 @@
             <li class="nav-item">
               <a class="nav-link disabled" href="#">own every moment.</a>
             </li>
-            <!-- TASK LINKS -->
-              <li class="nav-item">
-                <a class="nav-link" id='create-task-button' href="#">create</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id='index-task' href="#">tasks</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id='update-task-button' href="#">update</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id='delete-task-button' href="#">delete</a>
-              </li>
-              <!-- LIST LINK (INDEX) -->
-              <li class="nav-item">
-                <a class="nav-link" id='index-list-button' href="#">view lists</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="listNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  lists<b class="caret"></b>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#" id='index-list-button'>view</a>
-                  <a class="dropdown-item" href="#" id='create-list-button'>create</a>
-                  <a class="dropdown-item" href="#" id='update-list-button'>update</a>
-                  <a class="dropdown-item" href="#" id='show-list-button'>search</a>
-                  <a class="dropdown-item" href="#" id='delete-list-button'>delete</a>
-                </div>
-                <!--  -->
-              </li>
-              <!-- AUTH LINKS -->
+              <!-- houehold resource tba LINKS -->
+              <li class='nav-item dropdown'>
+                <a class='nav-link dropwdown-toggle' href='#' id='accountEditNavDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                  my account<b class='caret'></b>
+                  </a>
+                  <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                    <a class='dropwdown-item' href='#' id='manage-household-button'>edit household</a>
+                    </div>
+                  </li>
+<!-- AUTH LINKS -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="settingsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             settings<b class="caret"></b>
@@ -74,22 +53,30 @@
       </ul>
       <!--  -->
 
-      <!-- SHOW TASK SEARCHBAR -->
-      <form class="form-inline my-2 my-lg-0" id='show-task'>
-          <input name='task[_id]' type='text' class='form-control' placeholder='enter task id'  aria-label="Search">
-          <input class="btn btn-outline-success my-2 my-sm-0" type='submit' class='form-control' value='search' placeholder="search">
-      </form>
-    </div>
   </nav>
   <!--  -->
+<!-- SIDE MENU HERE -->
+<div class='row'>
+  <nav class='nav-menu'>
+    <div class='col-4'>
+  <ul>
+    <li class='active'>
+      <a href='#'>
+      </a>
+    </li>
+  </ul>
+</div>
+</nav>
+</div>
 
+<!--  -->
   <!-- HEADER LOGO THINGY -->
 <div id='essence'>
 <h1>essence.</h1>
 <h4>/ˈesəns/</h4>
 <p>own every moment.</p>
 </div>
-<!-- DISPLAY MESSAGES, RESPONSE -->
+<!-- DISPLAY MESSAGES, RESPONSE WE NEED CONTAINERS -->
       <div class='messages'>
     <p id='message'></p>
     <p id='message2'></p>
@@ -101,50 +88,72 @@
 
       <!-- AUTH FORMS -->
    <form id='sign-up'>
+
      <div class='form-group'>
+      <div class='col-6'>
+
    <input type='email' name='credentials[email]' class='form-control' placeholder='enter email'>
- </div>
-<div class='form-group'>
+
+
 <input type='password' name='credentials[password]' class='form-control'   placeholder='password'>
-</div> <div class='form-group'>
+
 <input type='password' name='credentials[password_confirmation]' class='form-control'  placeholder='confirm password'>
 </div>
-<div class='form-group'>
+
+  <div class='col-1'>
 <input type='submit' class='form-control' value='sign-up'>
+</div>
 </div>
 </form>
 
 <form id='sign-in'>
   <div class='form-group'>
+    <div class='col-6'>
         <input type= 'text' name='credentials[email]' class='form-control' placeholder='email'>
-      </div>
-        <div class='form-group'>
+
         <input type='text' name='credentials[password]' class='form-control' placeholder='password'>
-      </div>
-        <div class='form-group'>
+
+          </div>
+          <div class='col-1'>
         <input type='submit' class='form-control' value='sign in'>
       </div>
+    </div>
       </form>
 
+      <form id='change-pw'>
 <div class='form-group'>
-<form id='change-pw'>
+  <div class='col-6'>
+
+
 <input type='password' name='passwords[old]' class='form-control' placeholder='old password'>
+
 <input type='password' name='passwords[new]'class='form-control' placeholder='new password'>
+
 <input type='password' name='passwords[new]' class='form-control' placeholder='confirm password'>
+</div>
+<div class='col-1'>
 <input type='submit' class='form-control' value='confirm'>
+</div>
+</div>
 </form>
 <!--  -->
 
 <!-- TASKS FORMS -->
-
+<form id='create-task'>
 <div class='form-group'>
-      <form id='create-task'>
-        <input name='task[text]'class='form-control' type='text' placeholder='enter task'>
-        <input name='task[dueDate]' class='form-control' type='date'>
-        <input type='submit'class='form-control' value='create task'>
-        </form>
-      </div>
+        <div class='col-6'>
 
+        <input name='task[text]'class='form-control' type='text' placeholder='enter task'>
+
+        <input name='task[dueDate]' class='form-control' type='date'>
+        </div>
+        <div class='col-1'>
+        <input type='submit'class='form-control' value='create task'>
+        </div>
+      </div>
+        </form>
+
+        
 <div class='form-group'>
       <form id='delete-task'>
          <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
@@ -190,13 +199,7 @@
                     <input type='submit' class='form-control' value='update list'>
                     </form>
                     </div>
-<!-- the id of the search button is "show-list-button". loated in navbar -->
-<div class='form-group'>
-                    <form class="form-inline my-2 my-lg-0" id='show-list'>
-                      <input name='list[_id]' type='text' class='form-control' placeholder='enter list id'  aria-label="Search">
-                      <input class="btn btn-outline-success my-2 my-sm-0" type='submit' class='form-control' value='search' placeholder="search">
-                  </form>
-                  </div>
+
                       <!--  -->
     </body>
 </html>

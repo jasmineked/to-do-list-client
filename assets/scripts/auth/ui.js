@@ -5,7 +5,7 @@ const { onIndexList } = require('../lists/events')
 // the following are success & failure handler functions
 const signUpSuccess = function (data) {
   store.user = data.user
-  onIndexList()
+
   $('form').trigger('reset')
   $('#response-text').trigger('reset')
   $('#message').text('welcome')
@@ -53,6 +53,9 @@ const signInSuccess = function (data) {
   // list actions
   $('#index-list-button').show()
   $('#listNavDropdown').show()
+
+  // household actions
+  $('#accountEditNavDropdown').show()
 }
 const signInFailure = function (data) {
   $('#message').text('error on sign in')
@@ -94,6 +97,8 @@ const signOutSuccess = function () {
   $('#index-list-button').hide()
   $('#listNavDropdown').hide()
   $('#settingsNavDropdown').hide()
+
+  $('#accountEditNavDropdown').hide()
   store.user = null
 }
 

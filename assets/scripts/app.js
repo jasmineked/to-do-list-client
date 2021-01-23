@@ -43,7 +43,10 @@ $(() => {
   $('#update-task').hide()
   $('#create-task').hide()
   $('#response-text').hide()
-  $('#navbarDropdown').hide()
+  // $('#navbarDropdown').hide()
+  // for some reason this ID does not hide all the dropdons despite having the same ID?
+  $('#accountEditNavDropdown').hide()
+  $('#settingsNavDropdown').hide()
   $('#create-list').hide()
   $('#index-list').hide()
   $('#show-list').hide()
