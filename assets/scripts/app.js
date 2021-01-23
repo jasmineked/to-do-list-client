@@ -178,7 +178,7 @@ $(() => {
     $('#response-text').hide()
     $('#create-task').hide()
     $('#delete-task').hide()
-    $('$index-task').hide()
+    $('index-task').hide()
   })
 
   $('#index-list-button').click(function () {
