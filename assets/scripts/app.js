@@ -47,6 +47,8 @@ $(() => {
   // for some reason this ID does not hide all the dropdons despite having the same ID?
   $('#accountEditNavDropdown').hide()
   $('#settingsNavDropdown').hide()
+  $('#navbarDropdown').hide()
+  // $('#navbar').hide()
   $('#create-list').hide()
   $('#index-list').hide()
   $('#show-list').hide()
@@ -83,7 +85,7 @@ $(() => {
     $('#sign-up').hide()
     $('#sign-up-button').show()
   })
-  // start
+  // starts here
   // AUTH
   $('#sign-up-button').click(function () {
     $('#sign-up').show()
@@ -110,6 +112,9 @@ $(() => {
     $('#create-task').hide()
     $('#response-text').hide()
   })
+  // $('#sign-out').click(function () {
+  //   $('')
+  // })
   // $('#sign-out').click(function () {
   //   $('')
   // })
