@@ -26,11 +26,7 @@ const onIndexSuccess = function (responseData) {
   $('#message2').hide()
   $('#response-text').html('')
   responseData.tasks.forEach(tasks => {
-<<<<<<< HEAD
     const viewTasks = (`
-=======
-    const taskList = (`
->>>>>>> main
       <p></br><label><input type='checkbox' value='task[_id]' onclick='document.getElementById'></label> ${tasks.text}</p>
       <p>Due:${dateFormat(tasks.dueDate, 'dddd, mmmm dS, yyyy')}</p>
       <p>ID: ${tasks._id}</p>

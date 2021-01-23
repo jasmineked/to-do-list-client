@@ -18,11 +18,7 @@ const onIndexListSuccess = function (responseData) {
   $('#message2').hide()
   $('#response-text').html('')
   responseData.lists.forEach(lists => {
-<<<<<<< HEAD
     const viewLists = (`
-=======
-    const list = (`
->>>>>>> main
       <p>${lists.name}</p>
       <p>ID: ${lists._id}</p>
   `)
