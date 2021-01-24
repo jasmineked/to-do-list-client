@@ -23,18 +23,6 @@
             <li class="nav-item">
               <a class="nav-link disabled" href="#">own every moment.</a>
             </li>
-
-              <!-- houehold resource tba LINKS -->
-              <li class='nav-item dropdown'>
-                <a class='nav-link dropwdown-toggle' href='#' id='accountEditNavDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                  my account<b class='caret'></b>
-                  </a>
-                  <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                    <a class='dropwdown-item' href='#' id='manage-household-button'>edit household</a>
-                    </div>
-                  </li>
-<!-- AUTH LINKS -->
-
             <!-- TASK LINKS -->
               <li class="nav-item">
                 <a class="nav-link" id='create-task-button' href="#">create</a>
@@ -65,30 +53,10 @@
                 </div>
                 <!--  -->
               </li>
-              <!-- AUTH LINKS -->
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="settingsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            settings<b class="caret"></b>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#" id='change-pw-button'>change password</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id='sign-out' href="#">sign out</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' id='nav-sign-up' href='#'>sign up here</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' id='nav-sign-in' href='#'>sign in.</a>
-        </li>
-      </ul>
-      <!--  -->
 
-  </nav>
-  <!--  -->
+
+              <!--  -->
 <!-- SIDE MENU HERE -->
 <body id= 'page-top'>
 
@@ -114,7 +82,7 @@
 
       <a class='nav link' href='#'>
         <i class="fas fa-clipboard-list"></i>
-        <span>View All Lists</span>
+        <span>Lists</span>
       </a>
     </li>
 
@@ -122,20 +90,99 @@
     <hr class='sidebar-divider'>
 
     <!-- heading  -->
-    <div class='sidebar-heading'></div>
+    <div class='sidebar-heading'>Workflow</div>
+
+    <!-- nav item lists collapse menu -->
+    <li class='nav-item'>
+      <a class='nav-link collapsed' href='#' data-toggle='collapse' data-target='#collapseTwo'
+      aria-explanded='true'
+      aria-controls='collapseTwo'>
+      <i class="fas fa-boxes"></i>
+      <span>Lists</span>
+    </a>
+    <div id='collapseTwo' class='collapse' aria-labelledby="headingTwo"
+    data-parent='#accordionSidebar'>
+  <div class='bg-white py-2 collapse-inner rounded'>
+    <a class='collapse-item' href='#'>Create</a>
+    <a class='collapse-item' href='#'>Update</a>
+    <a class='collapse-item' href='#'>Delete</a>
+  </div>
+  </div>
+    </li>
+
+    <!-- nav item tasks collapse menu  -->
+    <li class='nav-item'>
+      <a class='nav-link collapsed' href='#'
+      data-toggle='collapse'
+      data-target='#collapseTasks'
+      aria-expanded='true'
+      aria-controls='collapseTasks'>
+      <i class="fas fa-tasks"></i><span>Tasks</span></a>
+    </a>
+    <div id='collapseTasks' class='collapse'
+    aria-labelledby='headingTasks'
+    data-parent='#accordionSidebar'>
+  <div class='bg-white py-2 collapse-inner rounded'>
+    <a class='collapse-item'
+    href='#'>Create</a>
+    <a class='collapse-item'
+    href='#'>Update</a>
+    <a class='collapse-item'
+    href='#'>Delete</a>
+    <a class='collapse-item'
+    href='#'>View</a>
+  </div>
+    </li>
+
+    <!-- divider -->
+    <hr class='sidebar-divider'>
+
+    <!-- heading -->
+    <div class='sidebar-heading'>
+      My Calendar
+    </div>
   </ul>
 </div>
 
 </div>
 
+              <!-- AUTH LINKS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="settingsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            settings<b class="caret"></b>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" id='change-pw-button'>change password</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id='sign-out' href="#">sign out</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' id='nav-sign-up' href='#'>sign up here</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' id='nav-sign-in' href='#'>sign in.</a>
+        </li>
+      </ul>
+      <!--  -->
 
-  <!-- HEADER LOGO THINGY
+      <!-- SHOW TASK SEARCHBAR -->
+      <form class="form-inline my-2 my-lg-0" id='show-task'>
+          <input name='task[_id]' type='text' class='form-control' placeholder='enter task id'  aria-label="Search">
+          <input class="btn btn-outline-success my-2 my-sm-0" type='submit' class='form-control' value='search' placeholder="search">
+      </form>
+    </div>
+  </nav>
+  <!--  -->
+
+  <!-- HEADER LOGO THINGY -->
 <div id='essence'>
 <h1>essence.</h1>
 <h4>/ˈesəns/</h4>
 <p>own every moment.</p>
-</div> -->
-<!-- DISPLAY MESSAGES, RESPONSE WE NEED CONTAINERS -->
+</div>
+<!-- DISPLAY MESSAGES, RESPONSE -->
       <div class='messages'>
     <p id='message'></p>
     <p id='message2'></p>
@@ -147,72 +194,50 @@
 
       <!-- AUTH FORMS -->
    <form id='sign-up'>
-
      <div class='form-group'>
-      <div class='col-6'>
-
    <input type='email' name='credentials[email]' class='form-control' placeholder='enter email'>
-
-
+ </div>
+<div class='form-group'>
 <input type='password' name='credentials[password]' class='form-control'   placeholder='password'>
-
+</div> <div class='form-group'>
 <input type='password' name='credentials[password_confirmation]' class='form-control'  placeholder='confirm password'>
 </div>
-
-  <div class='col-1'>
+<div class='form-group'>
 <input type='submit' class='form-control' value='sign-up'>
-</div>
 </div>
 </form>
 
 <form id='sign-in'>
   <div class='form-group'>
-    <div class='col-6'>
         <input type= 'text' name='credentials[email]' class='form-control' placeholder='email'>
-
+      </div>
+        <div class='form-group'>
         <input type='text' name='credentials[password]' class='form-control' placeholder='password'>
-
-          </div>
-          <div class='col-1'>
+      </div>
+        <div class='form-group'>
         <input type='submit' class='form-control' value='sign in'>
       </div>
-    </div>
       </form>
 
-      <form id='change-pw'>
 <div class='form-group'>
-  <div class='col-6'>
-
-
+<form id='change-pw'>
 <input type='password' name='passwords[old]' class='form-control' placeholder='old password'>
-
 <input type='password' name='passwords[new]'class='form-control' placeholder='new password'>
-
 <input type='password' name='passwords[new]' class='form-control' placeholder='confirm password'>
-</div>
-<div class='col-1'>
 <input type='submit' class='form-control' value='confirm'>
-</div>
-</div>
 </form>
 <!--  -->
 
 <!-- TASKS FORMS -->
-<form id='create-task'>
+
 <div class='form-group'>
-        <div class='col-6'>
-
+      <form id='create-task'>
         <input name='task[text]'class='form-control' type='text' placeholder='enter task'>
-
         <input name='task[dueDate]' class='form-control' type='date'>
-        </div>
-        <div class='col-1'>
         <input type='submit'class='form-control' value='create task'>
-        </div>
-      </div>
         </form>
+      </div>
 
-        
 <div class='form-group'>
       <form id='delete-task'>
          <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
@@ -258,7 +283,13 @@
                     <input type='submit' class='form-control' value='update list'>
                     </form>
                     </div>
-
+<!-- the id of the search button is "show-list-button". loated in navbar -->
+<div class='form-group'>
+                    <form class="form-inline my-2 my-lg-0" id='show-list'>
+                      <input name='list[_id]' type='text' class='form-control' placeholder='enter list id'  aria-label="Search">
+                      <input class="btn btn-outline-success my-2 my-sm-0" type='submit' class='form-control' value='search' placeholder="search">
+                  </form>
+                  </div>
                       <!--  -->
     </body>
 </html>
