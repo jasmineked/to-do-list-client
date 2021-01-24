@@ -55,6 +55,7 @@ $(() => {
   $('#delete-list').hide()
   $('#update-list').hide()
   $('#create-list').hide()
+  // $('#accordionSidebar').hide()
 
   // assign ID to these authenticated actions to condense this section & improve semantics
   $('#create-task-button').hide()

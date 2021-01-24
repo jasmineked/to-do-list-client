@@ -26,6 +26,7 @@ const signInSuccess = function (data) {
   $('form').trigger('reset')
   store.user = data.user
   onIndexList()
+  $('#accordionSidebar').show()
   $('#message').text('welcome back')
   $('#response-text').trigger('reset')
   $('#response-text').show()
@@ -98,7 +99,8 @@ const signOutSuccess = function () {
   $('#listNavDropdown').hide()
   $('#settingsNavDropdown').hide()
 
-  $('#accountEditNavDropdown').hide()
+  // $('#accountEditNavDropdown').hide()
+  // $('#accordionSidebar').hide()
   store.user = null
 }
 
