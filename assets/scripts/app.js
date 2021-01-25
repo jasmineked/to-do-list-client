@@ -48,7 +48,7 @@ $(() => {
   $('#accountEditNavDropdown').hide()
   $('#settingsNavDropdown').hide()
   $('#navbarDropdown').hide()
-  // $('#navbar').hide()
+  $('#sidebar').hide()
   $('#create-list').hide()
   $('#index-list').hide()
   $('#show-list').hide()
@@ -56,7 +56,6 @@ $(() => {
   $('#update-list').hide()
   $('#create-list').hide()
 
-  // assign ID to these authenticated actions to condense this section & improve semantics
   $('#create-task-button').hide()
   $('#index-task').hide()
   $('#update-task-button').hide()

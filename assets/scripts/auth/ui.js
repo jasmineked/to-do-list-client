@@ -30,6 +30,7 @@ const signInSuccess = function (data) {
   $('#response-text').trigger('reset')
   $('#response-text').show()
   $('#essence').hide()
+  $('#sidebar').show()
 
   // auth actions
   $('#sign-up').hide()

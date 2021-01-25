@@ -10,10 +10,15 @@
       <!-- Do not add `script` tags-->
       <script src='public/vendor.js' type='text/javascript' charset='utf-8' defer></script>
       <script src='public/application.js' type='text/javascript' charset='utf-8' defer></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+      <link rel='stylesheet' href='index.scss'>
     </head>
-    <body>
-      <!-- NAVBAR -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light" id='navbar'>
+
+
+
+    <body id= 'page-top'>
+      <!-- TOP NAVBAR -->
+      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" id='navbar'>
         <a class="navbar-brand" href="#">essənse.</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -23,173 +28,123 @@
             <li class="nav-item">
               <a class="nav-link disabled" href="#">own every moment.</a>
             </li>
-            <!-- TASK LINKS -->
-              <li class="nav-item">
-                <a class="nav-link" id='create-task-button' href="#">create</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" id='index-task' href="#">tasks</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id='update-task-button' href="#">update</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id='delete-task-button' href="#">delete</a>
-              </li>
-              <!-- LIST LINK (INDEX) -->
-              <li class="nav-item">
-                <a class="nav-link" id='index-list-button' href="#">view lists</a>
-              </li>
+              <!-- AUTH LINKS -->
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="listNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  lists<b class="caret"></b>
+                <a class="nav-link dropdown-toggle" href="#" id="settingsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  settings<b class="caret"></b>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#" id='index-list-button'>view</a>
-                  <a class="dropdown-item" href="#" id='create-list-button'>create</a>
-                  <a class="dropdown-item" href="#" id='update-list-button'>update</a>
-                  <a class="dropdown-item" href="#" id='show-list-button'>search</a>
-                  <a class="dropdown-item" href="#" id='delete-list-button'>delete</a>
+                  <a class="dropdown-item" href="#" id='change-pw-button'>Change Password</a>
                 </div>
-                <!--  -->
               </li>
+              <li class="nav-item">
+                <a class="nav-link" id='sign-out' href="#">sign out</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' id='nav-sign-up' href='#'>sign up here.</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' id='nav-sign-in' href='#'>sign in.</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+            <!--  -->
 
-
-
-              <!--  -->
 <!-- SIDE MENU HERE -->
-<body id= 'page-top'>
-
   <!-- page wrapper -->
-<div id='wrapper'>
+<div class='wrapper'>
 
   <!-- sidebar -->
-  <ul class='navbar-nav bg-gradient-primary sidebar sidebar-dark accordion' id='accordionSidebar'>
-
-    <!-- sidebar essence -->
-    <a class='sidebar-brand d-flex align-items-center justify-content-center' href='#'>
-      <div class='sidebar-brand-icon rotate-n-15'>
-        <i class="fas fa-hands-helping"></i>
-      </div>
-      <div class='sidebar-brand-text mx-3'>essence.</div>
-    </a>
-
-    <!-- divider -->
-    <hr class='sidebar-divider my-0'>
-
-    <!-- nav item dashboard -->
-    <li class='nav-item active'>
-
-      <a class='nav link' href='#'>
-        <i class="fas fa-clipboard-list"></i>
-        <span>Lists</span>
-      </a>
-    </li>
-
-    <!-- divider -->
-    <hr class='sidebar-divider'>
-
-    <!-- heading  -->
-    <div class='sidebar-heading'>Workflow</div>
-
-    <!-- nav item lists collapse menu -->
-    <li class='nav-item'>
-      <a class='nav-link collapsed' href='#' data-toggle='collapse' data-target='#collapseTwo'
-      aria-explanded='true'
-      aria-controls='collapseTwo'>
-      <i class="fas fa-boxes"></i>
-      <span>Lists</span>
-    </a>
-    <div id='collapseTwo' class='collapse' aria-labelledby="headingTwo"
-    data-parent='#accordionSidebar'>
-  <div class='bg-white py-2 collapse-inner rounded'>
-    <a class='collapse-item' href='#'>Create</a>
-    <a class='collapse-item' href='#'>Update</a>
-    <a class='collapse-item' href='#'>Delete</a>
-  </div>
-  </div>
-    </li>
-
-    <!-- nav item tasks collapse menu  -->
-    <li class='nav-item'>
-      <a class='nav-link collapsed' href='#'
-      data-toggle='collapse'
-      data-target='#collapseTasks'
-      aria-expanded='true'
-      aria-controls='collapseTasks'>
-      <i class="fas fa-tasks"></i><span>Tasks</span></a>
-    </a>
-    <div id='collapseTasks' class='collapse'
-    aria-labelledby='headingTasks'
-    data-parent='#accordionSidebar'>
-  <div class='bg-white py-2 collapse-inner rounded'>
-    <a class='collapse-item'
-    href='#'>Create</a>
-    <a class='collapse-item'
-    href='#'>Update</a>
-    <a class='collapse-item'
-    href='#'>Delete</a>
-    <a class='collapse-item'
-    href='#'>View</a>
-  </div>
-    </li>
-
-    <!-- divider -->
-    <hr class='sidebar-divider'>
-
-    <!-- heading -->
-    <div class='sidebar-heading'>
-      My Calendar
-    </div>
-  </ul>
+ <nav id='sidebar'>
+<div class='sidebar-header'>
+  <h3>essənse.</h3>
 </div>
 
+<ul class='list-styled components'>
+  <p>Welcome, namehere</p>
+  <li>
+    <a href='#'>Dashboard</a>
+  </li>
+  <li class='active'>
+    <a href='#homeSubmenu' data-toggle='collapse' aria-expanded='false' class='dropdown-toggle'>Lists</a>
+    <ul class='collapse list-unstyled' id='homeSubmenu'>
+      <li class='nav-item'>
+        <a class='nav-item' id='index-list-button'>View all</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' id='show-list-button' href='#'>Find</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' id='create-list-button' href='#'>Create</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' id='update-list-button' href='#'>Update</a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link' id='delete-list-button' href='#'>Delete</a>
+        </li>
+    </ul>
+  </li>
+  <li>
+    <a href='#pageSubmenu' data-toggle='collapse' aria-expanded='false' class='dropdown-toggle'>Tasks</a>
+    <ul class='collapse list-unstyled' id='pageSubmenu'>
+      <li class='nav-item'>
+        <a class='nav-link' id='index-task' href='#'>View all</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' id='create-task-button' href='#' >Create</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' id='update-task-button' href='#'>Update</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' id='delete-task-button' href='#'>Delete</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='#'>Calendar</a>
+  </li>
+</ul>
+</nav>
+
+
+ <!-- page content -->
+<!-- sidebar toggle button -->
+ <div id='content'>
+<nav class='navbar navbar-expand-lg navbar-light bg-light'>
+  <div class='container-fluid'>
+    <button type='button' id='sideCollapse' class='btn btn-info'>
+      <i class='fas fa-align-left'></i>
+      <span>Toggle Sidebar</span>
+    </button>
+
+  </div>
+ </div>
+</nav>
 </div>
 
-              <!-- AUTH LINKS -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="settingsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            settings<b class="caret"></b>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#" id='change-pw-button'>change password</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id='sign-out' href="#">sign out</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' id='nav-sign-up' href='#'>sign up here</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' id='nav-sign-in' href='#'>sign in.</a>
-        </li>
-      </ul>
-      <!--  -->
+
+
+
 
       <!-- SHOW TASK SEARCHBAR -->
       <form class="form-inline my-2 my-lg-0" id='show-task'>
           <input name='task[_id]' type='text' class='form-control' placeholder='enter task id'  aria-label="Search">
           <input class="btn btn-outline-success my-2 my-sm-0" type='submit' class='form-control' value='search' placeholder="search">
       </form>
-    </div>
-  </nav>
   <!--  -->
 
-  <!-- HEADER LOGO THINGY -->
-<div id='essence'>
-<h1>essence.</h1>
-<h4>/ˈesəns/</h4>
-<p>own every moment.</p>
-</div>
 <!-- DISPLAY MESSAGES, RESPONSE -->
       <div class='messages'>
     <p id='message'></p>
     <p id='message2'></p>
           </div>
-
-      <button id='sign-up-button' class= 'btn btn-secondary' type='button'>start today</button>
-      <button id='sign-in-button' class= 'btn btn-secondary' type='button'>sign in</button>
+<!-- unauthenticated user interface -->
+      <button id='sign-up-button' class= 'btn btn-info' type='button'>start today</button>
+      <button id='sign-in-button' class= 'btn btn-info' type='button'>sign in</button>
 <!--  -->
 
       <!-- AUTH FORMS -->
@@ -202,8 +157,9 @@
 </div> <div class='form-group'>
 <input type='password' name='credentials[password_confirmation]' class='form-control'  placeholder='confirm password'>
 </div>
-<div class='form-group'>
-<input type='submit' class='form-control' value='sign-up'>
+<div class='form-group-button'>
+<button type='submit' class='btn btn-info'  value='sign-up'>
+submit</button>
 </div>
 </form>
 
@@ -214,8 +170,9 @@
         <div class='form-group'>
         <input type='text' name='credentials[password]' class='form-control' placeholder='password'>
       </div>
-        <div class='form-group'>
-        <input type='submit' class='form-control' value='sign in'>
+        <div class='form-group-button'>
+        <button type='submit' class='btn btn-info'  value='sign in'>
+          submit</button>
       </div>
       </form>
 
@@ -224,8 +181,10 @@
 <input type='password' name='passwords[old]' class='form-control' placeholder='old password'>
 <input type='password' name='passwords[new]'class='form-control' placeholder='new password'>
 <input type='password' name='passwords[new]' class='form-control' placeholder='confirm password'>
-<input type='submit' class='form-control' value='confirm'>
+<button type='submit' class='btn btn-info'  value='confirm'>
+  confirm</button>
 </form>
+
 <!--  -->
 
 <!-- TASKS FORMS -->
@@ -234,14 +193,16 @@
       <form id='create-task'>
         <input name='task[text]'class='form-control' type='text' placeholder='enter task'>
         <input name='task[dueDate]' class='form-control' type='date'>
-        <input type='submit'class='form-control' value='create task'>
+        <button type='submit' class='btn btn-info'  value='create task'>
+          submit</button>
         </form>
       </div>
 
 <div class='form-group'>
       <form id='delete-task'>
          <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
-          <input type='submit' class='form-control' value='delete task' id='destroycheck'>
+          <button type='submit' class='btn btn-info' id='destroycheck' value='delete task'>
+            submit</button>
       </form>
     </div>
 
@@ -250,10 +211,10 @@
           <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
           <input type='text' name='task[text]' class='form-control' placeholder='enter task'>
           <input type='date' name='task[duedate]' class='form-control' placeholder='enter date due'>
-          <input type='submit' class='form-control' value='update task'>
+          <button type='submit' class='btn btn-info' value='update task'>
+        </form>
         </div>
-            </form>
-<div class='container' id='list-here'></div>
+
       <div class='container' id='response-text'>
       </div>
       <!--  -->
@@ -264,13 +225,13 @@
         <input name='list[name]'class='form-control' type='text' placeholder='list name'>
         <textarea name='list[description]' class='form-control' type='text'placeholder='description'></textarea>
         <input name='tasks[text]'class='form-control' type='text' placeholder='enter task'>
-        <input type='submit'class='form-control' value='create list'>
+        <button type='submit' class='btn btn-info' value='create list'>
         </form>
       </div>
       <div class='form-group'>
             <form id='delete-list'>
                <input type='text' name='list[_id]' class='form-control' placeholder='enter list id'>
-                <input type='submit' class='form-control' value='delete list'>
+                <button type='submit' class='btn btn-info' value='delete list'>
             </form>
           </div>
           <div class='form-group'>
@@ -280,10 +241,10 @@
                     <input type='text' name='list[description]' class='form-control' placeholder='enter updated description'>
                     <input type= 'text' name= 'tasks[text]' class='form-control' placeholder='update task'>
                     <input type= 'date' name= 'tasks[date]' class='form-control' placeholder='update task'>
-                    <input type='submit' class='form-control' value='update list'>
+                    <button type='submit' class='btn btn-info' value='update list'>
                     </form>
                     </div>
-<!-- the id of the search button is "show-list-button". loated in navbar -->
+
 <div class='form-group'>
                     <form class="form-inline my-2 my-lg-0" id='show-list'>
                       <input name='list[_id]' type='text' class='form-control' placeholder='enter list id'  aria-label="Search">
