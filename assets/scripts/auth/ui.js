@@ -31,7 +31,8 @@ const signInSuccess = function (data) {
   $('#response-text').show()
   $('#essence').hide()
   $('#sidebar').show()
-
+  $('#content').show()
+  $('#unauthenticated-ui').hide()
   // auth actions
   $('#sign-up').hide()
   $('#sign-in').hide()
@@ -69,7 +70,12 @@ const signOutSuccess = function () {
   $('form').trigger('reset')
   $('#response-text').hide()
   $('#essence').show()
-  $('#message').text('see you soon')
+  // $('#message').text('see you soon')
+  // resetting ui to default
+  $('#sidebar').hide()
+  $('.wrapper').show()
+  $('#unauthenticated-ui').show()
+  $('#content').hide()
 
   // auth
   $('#sign-out').hide()

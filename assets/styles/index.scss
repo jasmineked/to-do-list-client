@@ -5,6 +5,12 @@
     width: 100%;
 
 }
+#form-content {
+    flex: 1;
+}
+#content {
+    padding-left: 250px;
+}
 
 #sidebar {
 min-width: 250px;
@@ -20,20 +26,17 @@ a[data-toggle='collapse'] {
     position: relative;
 }
 
-// .dropdown-toggle::after {
-//     display: block;
-//     position: absolute;
-//     top: 50%;
-//     right: 20px;
-//     transform: translateY(-50%);
-
 @media (max-width: 768px) {
+    #content {
+        padding-left: 20px;
+    }
     #sidebar {
         margin-left: -250px;
     }
     #sidebar.active {
         margin-left: 0;
     }
+
 }
 #sidebar.active {
     margin-left: 0px;
@@ -89,4 +92,15 @@ ul ul a {
 .form-group {
  width: 600px;
  display: block;
+}
+
+#unauthenticated-ui {
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%);
+ margin: auto;
+ padding: auto;
+ width: 20%
+//  text-align: center;
 }

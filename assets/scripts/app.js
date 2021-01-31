@@ -43,8 +43,6 @@ $(() => {
   $('#update-task').hide()
   $('#create-task').hide()
   $('#response-text').hide()
-  // $('#navbarDropdown').hide()
-  // for some reason this ID does not hide all the dropdons despite having the same ID?
   $('#accountEditNavDropdown').hide()
   $('#settingsNavDropdown').hide()
   $('#navbarDropdown').hide()
@@ -63,6 +61,7 @@ $(() => {
   $('#index-list-button').hide()
   $('#listNavDropdown').hide()
   $('#settingsNavDropdown').hide()
+  $('#content').hide()
 
   // sign in & signup links on navbar
   $('#nav-sign-up').show()
@@ -71,35 +70,41 @@ $(() => {
   // NAVBAR AUTH
   $('#nav-sign-up').click(function () {
     $('#sign-up').show()
-    $('#message').text('already joined?')
     $('#sign-up-button').hide()
     $('#sign-in').hide()
-    $('#sign-in-button').show()
+    $('#sign-in-button').hide()
   })
 
   $('#nav-sign-in').click(function () {
     $('#sign-in').show()
-    $('#message').text('not a member?')
     $('#sign-in-button').hide()
     $('#sign-up').hide()
-    $('#sign-up-button').show()
+    $('#sign-up-button').hide()
   })
-  // starts here
   // AUTH
+
+  // links adjacent to sign in buttons
+  $('#ui-signin').click(function () {
+    $('#sign-up').hide()
+    $('#sign-in').show()
+  })
+  $('#ui-signup').click(function () {
+    $('#sign-in').hide()
+    $('#sign-up').show()
+  })
+  // teal buttons on landing page
   $('#sign-up-button').click(function () {
     $('#sign-up').show()
-    $('#sign-in-button').show()
+    $('#sign-in-button').hide()
     $('#sign-up-button').hide()
     $('#sign-in').hide()
-    $('#message').text('already joined?')
   })
 
   $('#sign-in-button').click(function () {
     $('#sign-in').show()
     $('#sign-in-button').hide()
-    $('#sign-up-button').show()
+    $('#sign-up-button').hide()
     $('#sign-up').hide()
-    $('#message').text('not a member?')
   })
 
   $('#change-pw-button').click(function () {
