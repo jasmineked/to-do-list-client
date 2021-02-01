@@ -18,7 +18,7 @@
 
     <body id= 'page-top'>
       <!-- TOP NAVBAR -->
-      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" id='navbar'>
+      <nav class="navbar sticky-top flex navbar-expand-lg navbar-light bg-light" id='navbar'>
         <a class="navbar-brand" href="#">essənse.</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -50,12 +50,15 @@
             </ul>
           </div>
         </nav>
-            <!--  -->
-
+            <!--mask  -->
+            <div id='intro' class='view'>
+              <p id='slogan'>keep your roommates accountable.</p><br>
+              <img id='clean' src='../assets/styles/laundry.jpg' alt='vacuuming glitter on carpet'/>
+            </div>
+<!-- end of mask -->
 <!-- SIDE MENU HERE -->
   <!-- page wrapper -->
 <div class='wrapper'>
-
   <!-- sidebar -->
  <nav id='sidebar'>
 <div class='sidebar-header'>
@@ -68,8 +71,8 @@
     <a href='#'>Dashboard</a>
   </li>
   <li class='active'>
-    <a href='#homeSubmenu' data-toggle='collapse' aria-expanded='false' class='dropdown-toggle'>Lists</a>
-    <ul class='collapse list-unstyled' id='homeSubmenu'>
+    <a href='#' data-toggle='collapse' aria-expanded='false' class='dropdown-toggle'>Lists</a>
+    <ul class='collapse list-unstyled' id='listMenu'>
       <li class='nav-item'>
         <a class='nav-item' id='index-list-button'>View all</a>
       </li>
@@ -88,8 +91,8 @@
     </ul>
   </li>
   <li>
-    <a href='#pageSubmenu' data-toggle='collapse' aria-expanded='false' class='dropdown-toggle'>Tasks</a>
-    <ul class='collapse list-unstyled' id='pageSubmenu'>
+    <a href='#' data-toggle='collapse' aria-expanded='false' class='dropdown-toggle'>Tasks</a>
+    <ul class='collapse list-unstyled' id='taskMenu'>
       <li class='nav-item'>
         <a class='nav-link' id='index-task' href='#'>View all</a>
       </li>
@@ -115,7 +118,7 @@
 <!-- unauthenticated user interface -->
       <button id='sign-up-button' class= 'btn btn-info' type='button'>start today</button>
       <button id='sign-in-button' class= 'btn btn-info' type='button'>sign in</button>
-</div>
+
 <!--  -->
 
       <!-- AUTH FORMS -->
@@ -134,7 +137,6 @@ submit</button>   <a href='#' id='ui-signin'>already joined?</a>
 </div>
 </form>
 
-
 <form id='sign-in'>
   <div class='form-group'>
         <input type= 'text' name='credentials[email]' class='form-control' placeholder='email'>
@@ -147,7 +149,8 @@ submit</button>   <a href='#' id='ui-signin'>already joined?</a>
           submit</button>   <a href='#' id='ui-signup'>not a member?</a>
       </div>
       </form>
-      
+    </div>
+
  <!-- page content -->
 <div id='content'>
     <div class='container' id='response-text'></div>

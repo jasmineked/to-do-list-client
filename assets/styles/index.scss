@@ -5,6 +5,66 @@
     width: 100%;
 
 }
+// html,
+// body,
+// header,
+// #intro {
+//     height: 100%;
+// }
+
+.view {
+    height: 560px;
+    // width: 100%;
+    // margin: auto;
+    // padding:-20%;
+    // background-size: 20%;
+    overflow: hidden;
+    position: relative;
+    // align-items: center;
+    // vertical-align: middle;
+}
+
+#clean {
+    // display: flex;
+    // overflow: hidden;
+    // width: auto;
+    // height: 160%;
+    width: 100%;
+    height: auto;
+    top: -10%;
+    position: absolute;
+}
+#slogan {
+    z-index: 100;
+    position: relative;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    left: 25%;
+    top: 30%;
+    // width: 600px;
+    transform: translate(-50%, 50%);
+    display: inline;
+}
+@media (max-width: 768px) {
+    #clean {
+        height: 100%;
+        width: auto;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%, -50%);
+
+    }
+    // #unauthenticated-ui {
+    //     // display: inline;
+    //     position: absolute;
+    //     left: 50%;
+    //     top: 50%;
+    //     transform: translate(-50%, -50%);
+    //     width: 20%
+    // }
+}
 #form-content {
     flex: 1;
 }
@@ -96,11 +156,15 @@ ul ul a {
 
 #unauthenticated-ui {
  position: absolute;
+ display: inline-block;
  left: 50%;
  top: 50%;
  transform: translate(-50%, -50%);
- margin: auto;
- padding: auto;
  width: 20%
-//  text-align: center;
+}
+#ui-signup {
+ color: #ac4d3f;
+}
+#ui-signin {
+ color: #ac4d3f;
 }
