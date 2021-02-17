@@ -34,6 +34,7 @@ $(() => {
 
   // these are hidden by default
   // if it doesnt end with button or any other specification, it is a form. edit for semantics
+  $('#landingpage').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#sign-out').hide()

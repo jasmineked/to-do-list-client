@@ -33,6 +33,9 @@ const signInSuccess = function (data) {
   $('#sidebar').show()
   $('#content').show()
   $('#unauthenticated-ui').hide()
+
+  // landing page is the homepage for unauth users
+  $('#landingpage').hide()
   // auth actions
   $('#sign-up').hide()
   $('#sign-in').hide()
@@ -76,6 +79,7 @@ const signOutSuccess = function () {
   $('.wrapper').show()
   $('#unauthenticated-ui').show()
   $('#content').hide()
+  $('#landingpage').show()
 
   // auth
   $('#sign-out').hide()

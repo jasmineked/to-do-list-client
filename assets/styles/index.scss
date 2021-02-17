@@ -5,55 +5,62 @@
     width: 100%;
 
 }
-// html,
-// body,
-// header,
-// #intro {
-//     height: 100%;
-// }
 
 .view {
     height: 560px;
-    // width: 100%;
-    // margin: auto;
-    // padding:-20%;
-    // background-size: 20%;
     overflow: hidden;
     position: relative;
-    // align-items: center;
-    // vertical-align: middle;
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    display: block;
 }
 
 #clean {
-    // display: flex;
-    // overflow: hidden;
-    // width: auto;
-    // height: 160%;
+    height: 560px;
+    background-size: cover;
     width: 100%;
     height: auto;
-    top: -10%;
+    // top: -10%;
     position: absolute;
+    
 }
-#slogan {
-    z-index: 100;
-    position: relative;
-    color: white;
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    left: 25%;
-    top: 30%;
-    // width: 600px;
-    transform: translate(-50%, 50%);
+#caption {
     display: inline;
+    // padding: 60px;
+    // margin-top: 20px;
+    display: flex;
+//     z-index: 100;
+    // position: relative;
+    color: white;
+
+    text-align: center;
+    left: 28%;
+    top: 35%;
+//     // width: 600px;
+//     transform: translate(-50%, 50%);
+
 }
+#caption-text {
+    font-size: 46px;
+    font-weight: 700px;
+}
+// 
+// #caption {
+//     padding: 60px 0;
+//     width: 50%;
+//     float: left;
+//     position: relative;
+//     min-height: 1px;
+//     color: white;
+// }
 @media (max-width: 768px) {
     #clean {
         height: 100%;
         width: auto;
-        // left: 50%;
-        // top: 50%;
-        // transform: translate(-50%, -50%);
+        left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
 
     }
     // #unauthenticated-ui {
@@ -149,9 +156,11 @@ ul ul a {
     background: #9D5C63;
 }
 
-.form-group {
+#auth-forms{
+padding-top: 15%;
  width: 600px;
  display: block;
+ position: relative;
 }
 
 #unauthenticated-ui {
@@ -163,8 +172,8 @@ ul ul a {
  width: 20%
 }
 #ui-signup {
- color: #ac4d3f;
+ color: rgb(252, 246, 245);
 }
 #ui-signin {
- color: #ac4d3f;
+ color: rgb(252, 246, 245);
 }

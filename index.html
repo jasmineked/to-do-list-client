@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>organize your life.</title>
+      <title>gətitdone.</title>
       <meta name='viewport' content='width=device-width, initial-scale=1'>
 
       <!-- Do not add `link` tags-->
@@ -18,13 +18,13 @@
 
     <body id= 'page-top'>
       <!-- TOP NAVBAR -->
-      <nav class="navbar sticky-top flex navbar-expand-lg navbar-light bg-light" id='navbar'>
-        <a class="navbar-brand" href="#">essənse.</a>
+      <nav class="navbar sticky-top flex navbar-expand-lg navbar-light bg-light" id='main-navbar'>
+        <a class="navbar-brand" href="#">gətitdone.</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="nav navbar-nav navbar-right">
             <li class="nav-item">
               <a class="nav-link disabled" href="#">own every moment.</a>
             </li>
@@ -50,12 +50,55 @@
             </ul>
           </div>
         </nav>
-            <!--mask  -->
-            <div id='intro' class='view'>
-              <p id='slogan'>keep your roommates accountable.</p><br>
+            <!--LANDING PAGE  -->
+            <!-- <div class='container col-lg-12'> -->
+            <div id='landingpage' class='view'>
               <img id='clean' src='../assets/styles/laundry.jpg' alt='vacuuming glitter on carpet'/>
+              <div class="col-md-6 caption" id='caption'>
+                <p id='caption-text'>keep yourself accountable.</p><br>
+                </div>
+                <div class= 'col-md-4' id='unauthenticated-ui'>
+                  <!-- unauthenticated user interface -->
+                        <button id='sign-up-button' class= 'btn btn-info' type='button'>start today</button>
+                        <button id='sign-in-button' class= 'btn btn-info' type='button'>sign in</button>
+                </div>
+              
+                  <!--  -->
+                  
+                        <!-- AUTH FORMS -->
+                        <div class='container' id='auth-forms'>
+                     <form id='sign-up'>
+                       <div class='form-group'>
+                     <input type='email' name='credentials[email]' class='form-control' placeholder='enter email'>
+                   </div>
+                  <div class='form-group' >
+                  <input type='password' name='credentials[password]' class='form-control'   placeholder='password'>
+                  </div> <div class='form-group'>
+                  <input type='password' name='credentials[password_confirmation]' class='form-control'  placeholder='confirm password'>
+                  </div>
+                  <div class='form-group-button'>
+                  <button type='submit' class='btn btn-info'  value='sign-up'>
+                  submit</button>   <a href='#' id='ui-signin'>already joined?</a>
+                  </div>
+                  </form>
+                  
+                  <form id='sign-in'>
+                    <div class='form-group'>
+                          <input type= 'text' name='credentials[email]' class='form-control' placeholder='email'>
+                        </div>
+                          <div class='form-group'>
+                          <input type='text' name='credentials[password]' class='form-control' placeholder='password'>
+                        </div>
+                          <div class='form-group-button'>
+                          <button type='submit' class='btn btn-info'  value='sign in'>
+                            submit</button>   <a href='#' id='ui-signup'>not a member?</a>
+                        </div>
+                      </div>
+                        </form>
+                      </div>
+                      </div>
             </div>
-<!-- end of mask -->
+<!-- end of landing page -->
 <!-- SIDE MENU HERE -->
   <!-- page wrapper -->
 <div class='wrapper'>
@@ -66,7 +109,7 @@
 </div>
 
 <ul class='list-styled components'>
-  <p>Welcome, namehere</p>
+  <p>Welcome, Guest</p>
   <li>
     <a href='#'>Dashboard</a>
   </li>
@@ -114,42 +157,6 @@
 </ul>
 </nav>
 
-<div id='unauthenticated-ui'>
-<!-- unauthenticated user interface -->
-      <button id='sign-up-button' class= 'btn btn-info' type='button'>start today</button>
-      <button id='sign-in-button' class= 'btn btn-info' type='button'>sign in</button>
-
-<!--  -->
-
-      <!-- AUTH FORMS -->
-   <form id='sign-up'>
-     <div class='form-group'>
-   <input type='email' name='credentials[email]' class='form-control' placeholder='enter email'>
- </div>
-<div class='form-group'>
-<input type='password' name='credentials[password]' class='form-control'   placeholder='password'>
-</div> <div class='form-group'>
-<input type='password' name='credentials[password_confirmation]' class='form-control'  placeholder='confirm password'>
-</div>
-<div class='form-group-button'>
-<button type='submit' class='btn btn-info'  value='sign-up'>
-submit</button>   <a href='#' id='ui-signin'>already joined?</a>
-</div>
-</form>
-
-<form id='sign-in'>
-  <div class='form-group'>
-        <input type= 'text' name='credentials[email]' class='form-control' placeholder='email'>
-      </div>
-        <div class='form-group'>
-        <input type='text' name='credentials[password]' class='form-control' placeholder='password'>
-      </div>
-        <div class='form-group-button'>
-        <button type='submit' class='btn btn-info'  value='sign in'>
-          submit</button>   <a href='#' id='ui-signup'>not a member?</a>
-      </div>
-      </form>
-    </div>
 
  <!-- page content -->
 <div id='content'>
