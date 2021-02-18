@@ -58,9 +58,12 @@
     #clean {
         height: 100%;
         width: auto;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+        -o-background-size:cover;
         left: 50%;
-         top: 50%;
-         transform: translate(-50%, -50%);
+        top: 50%;
+        transform: translate(-50%, -50%);
 
     }
     // #unauthenticated-ui {
