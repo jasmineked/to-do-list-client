@@ -31,10 +31,18 @@ const onDeleteTask = function (event) {
 
 const onUpdateTask = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target)
+  const data = event.target
   api.update(data)
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
+}
+
+const onCompleteTask = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.update(data)
+    .then(ui.onIndexSuccess)
+    .catch(ui.onIndexFailure)
 }
 
 const onCreateTask = function (event) {
@@ -45,10 +53,15 @@ const onCreateTask = function (event) {
     .catch(ui.onCreateFailure)
 }
 
+// const onSelectTask = function (event) {
+//   // event.preventDefault()
+//   let checkbox = document.querySelector('input'[type = 'checkbox'].checked)
+// }
 module.exports = {
   onShowTask,
   onIndexTask,
   onDeleteTask,
   onUpdateTask,
-  onCreateTask
+  onCreateTask,
+  onCompleteTask
 }

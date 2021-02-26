@@ -14,26 +14,22 @@ const onCreateFailure = function (data) {
   $('#message').text('error creating task. Try again?')
   $('form').trigger('reset')
 }
-
-// let handleClick = document.querySelector('checkbox')
-
-// handleClick.addEventListener('click', () => {
-//   let checkbox = document.querySelector('input[type="checkbox"]:checked')
-// })
 const onIndexSuccess = function (responseData) {
-  // console.log(responseData)
+  console.log(responseData)
   $('#message').text('here are your incomplete tasks: ')
   $('#message2').hide()
   $('#response-text').html('')
   responseData.tasks.forEach(tasks => {
     const viewTasks = (`
-      <p></br><label><input type='checkbox' value='task[_id]' onclick='document.getElementById'></label> ${tasks.text}</p>
-      <p>Due:${dateFormat(tasks.dueDate, 'dddd, mmmm dS, yyyy')}</p>
+    
+      <input type='checkbox' value='${tasks.complete}' id='checkedbox'><a href='#update-task'>${tasks.text}</a><br>
+      Due:${dateFormat(tasks.dueDate, 'dddd, mmmm dS, yyyy')} <br>
       <p>ID: ${tasks._id}</p>
-      <input type='submit' class='form-control' value='delete task' id= 'delete-task-button'>
-  `)
+      `)
     $('#response-text').append(viewTasks)
   })
+  const showMe = $('#checkedbox').val()
+  alert(showMe)
 }
 
 const onIndexFailure = function (error) {

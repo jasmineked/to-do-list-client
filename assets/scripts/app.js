@@ -22,6 +22,7 @@ $(() => {
   $('#index-task').on('click', taskEvents.onIndexTask)
   $('#show-task').on('submit', taskEvents.onShowTask)
   $('#delete-task').on('submit', taskEvents.onDeleteTask)
+  $('#checkedbox').on('click', taskEvents.onCompleteTask)
   $('#update-task').on('submit', taskEvents.onUpdateTask)
   $('#create-task').on('submit', taskEvents.onCreateTask)
 
