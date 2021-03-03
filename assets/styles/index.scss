@@ -1,0 +1,179 @@
+@import '~bootstrap/scss/bootstrap';
+
+.wrapper {
+    display: flex;
+    width: 100%;
+
+}
+
+.view {
+    height: 560px;
+    overflow: hidden;
+    position: relative;
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    display: block;
+}
+
+#clean {
+    height: 560px;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    // top: -10%;
+    position: absolute;
+    
+}
+#caption {
+    display: inline;
+    // padding: 60px;
+    // margin-top: 20px;
+    display: flex;
+//     z-index: 100;
+    // position: relative;
+    color: white;
+
+    text-align: center;
+    left: 28%;
+    top: 35%;
+//     // width: 600px;
+//     transform: translate(-50%, 50%);
+
+}
+#caption-text {
+    font-size: 46px;
+    font-weight: 700px;
+}
+// 
+// #caption {
+//     padding: 60px 0;
+//     width: 50%;
+//     float: left;
+//     position: relative;
+//     min-height: 1px;
+//     color: white;
+// }
+@media (max-width: 768px) {
+    #clean {
+        height: 100%;
+        width: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+    // #unauthenticated-ui {
+    //     // display: inline;
+    //     position: absolute;
+    //     left: 50%;
+    //     top: 50%;
+    //     transform: translate(-50%, -50%);
+    //     width: 20%
+    // }
+}
+#form-content {
+    flex: 1;
+}
+#content {
+    padding-left: 250px;
+}
+
+#sidebar {
+min-width: 250px;
+max-width: 250px;
+min-height: 100vh;
+position: fixed;
+z-index: 999;
+top: 5;
+left: 0;
+}
+
+a[data-toggle='collapse'] {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    #content {
+        padding-left: 20px;
+    }
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+
+}
+#sidebar.active {
+    margin-left: 0px;
+}
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background: #9D5C63;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #9D5C63;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #ffffff;
+    background: #BFC0C0;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #9D5C63;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #9D5C63;
+}
+
+#auth-forms{
+padding-top: 15%;
+ width: 600px;
+ display: block;
+ position: relative;
+}
+
+#unauthenticated-ui {
+ position: absolute;
+ display: inline-block;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%);
+ width: 20%
+}
+#ui-signup {
+ color: rgb(252, 246, 245);
+}
+#ui-signin {
+ color: rgb(252, 246, 245);
+}

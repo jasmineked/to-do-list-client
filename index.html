@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>gətitdone.</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+      <!-- Do not add `link` tags-->
+      <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
+
+      <!-- Do not add `script` tags-->
+      <script src='public/vendor.js' type='text/javascript' charset='utf-8' defer></script>
+      <script src='public/application.js' type='text/javascript' charset='utf-8' defer></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+      <link type='text/css' href='index.scss'>
+    </head>
+
+
+
+    <body id= 'page-top'>
+      <!-- TOP NAVBAR -->
+      <nav class="navbar sticky-top flex navbar-expand-lg navbar-light bg-light" id='main-navbar'>
+        <a class="navbar-brand" href="#">gətitdone.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">own every moment.</a>
+            </li>
+              </li>
+              <!-- AUTH LINKS -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="settingsNavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  settings<b class="caret"></b>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#" id='change-pw-button'>Change Password</a>
+                </div>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' id='nav-sign-up' href='#'>sign up here.</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' id='nav-sign-in' href='#'>sign in.</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id='sign-out' href="#">sign out</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+            <!--LANDING PAGE  -->
+            <!-- <div class='container col-lg-12'> -->
+            <div id='landingpage' class='view'>
+              <img id='clean' src='../laundry.jpg'/>
+              <div class="col-md-6 caption" id='caption'>
+                <p id='caption-text'>keep yourself accountable.</p><br>
+                </div>
+                <div class= 'col-md-4' id='unauthenticated-ui'>
+                  <!-- unauthenticated user interface -->
+                        <button id='sign-up-button' class= 'btn btn-info' type='button'>start today</button>
+                        <button id='sign-in-button' class= 'btn btn-info' type='button'>sign in</button>
+                </div>
+              
+                  <!--  -->
+                  
+                        <!-- AUTH FORMS -->
+                        <div class='container' id='auth-forms'>
+                     <form id='sign-up'>
+                       <div class='form-group'>
+                     <input type='email' name='credentials[email]' class='form-control' placeholder='enter email'>
+                   </div>
+                  <div class='form-group' >
+                  <input type='password' name='credentials[password]' class='form-control'   placeholder='password'>
+                  </div> <div class='form-group'>
+                  <input type='password' name='credentials[password_confirmation]' class='form-control'  placeholder='confirm password'>
+                  </div>
+                  <div class='form-group-button'>
+                  <button type='submit' class='btn btn-info'  value='sign-up'>
+                  submit</button>   <a href='#' id='ui-signin'>already joined?</a>
+                  </div>
+                  </form>
+                  
+                  <form id='sign-in'>
+                    <div class='form-group'>
+                          <input type= 'text' name='credentials[email]' class='form-control' placeholder='email'>
+                        </div>
+                          <div class='form-group'>
+                          <input type='text' name='credentials[password]' class='form-control' placeholder='password'>
+                        </div>
+                          <div class='form-group-button'>
+                          <button type='submit' class='btn btn-info'  value='sign in'>
+                            submit</button>   <a href='#' id='ui-signup'>not a member?</a>
+                        </div>
+                      </div>
+                        </form>
+                      </div>
+
+<!-- end of landing page -->
+<!-- SIDE MENU HERE -->
+  <!-- page wrapper -->
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Welcome, Guest</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Dashboard</p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Lists</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                      <a class='nav-item' id='index-list-button'>View all</a>
+                    </li>
+                    <li>
+                      <a class='nav-link' id='show-list-button' href='#'>Find</a>
+                    </li>
+                    <li>
+                      <a class='nav-link' id='create-list-button' href='#'>Create</a>
+                    </li>
+                    <li>
+                      <a class='nav-link' id='update-list-button' href='#'>Update</a>
+                    </li>
+                    <li>
+                      <a class='nav-link' id='delete-list-button' href='#'>Delete</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Tasks</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                  <li>
+                    <a class='nav-link' id='index-task' href='#'>View all</a>
+                  </li>
+                  <li>
+                    <a class='nav-link' id='create-task-button' href='#' >Create</a>
+                  </li>
+                  <li>
+                    <a class='nav-link' id='update-task-button' href='#'>Update</a>
+                  </li>
+                  <li>
+                    <a class='nav-link' id='delete-task-button' href='#'>Delete</a>
+                  </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+</div>
+
+ <!-- page content -->
+<div id='content'>
+    <div class='container' id='response-text'></div>
+<div class='form-group'>
+<form id='change-pw'>
+<input type='password' name='passwords[old]' class='form-control' placeholder='old password'>
+<input type='password' name='passwords[new]'class='form-control' placeholder='new password'>
+<input type='password' name='passwords[new]' class='form-control' placeholder='confirm password'>
+<button type='submit' class='btn btn-info'  value='confirm'>
+  confirm</button>
+</form>
+
+<!--  -->
+      <!-- SHOW TASK SEARCHBAR -->
+      <form class="form-inline my-2 my-lg-0" id='show-task'>
+        <input name='task[_id]' type='text' class='form-control' placeholder='enter task id'  aria-label="Search">
+        <input class="btn btn-outline-success my-2 my-sm-0" type='submit' class='form-control' value='search' placeholder="search">
+    </form>
+<!--  -->
+<!-- TASKS FORMS -->
+
+<div class='form-group'>
+      <form id='create-task'>
+        <input name='task[text]'class='form-control' type='text' placeholder='enter task'>
+        <input name='task[dueDate]' class='form-control' type='date'>
+        <button type='submit' class='btn btn-info'  value='create task'>
+          submit</button>
+        </form>
+      </div>
+
+<div class='form-group'>
+      <form id='delete-task'>
+         <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
+          <button type='submit' class='btn btn-info'>
+            submit</button>
+      </form>
+    </div>
+
+<div class='form-group'>
+      <form id='update-task'>
+          <input type='text' name='task[_id]' class='form-control' placeholder='enter task id'>
+          <input type='text' name='task[text]' class='form-control' placeholder='enter task'>
+          <input type='date' name='task[duedate]' class='form-control' placeholder='enter date due'>
+          <button type='submit' class='btn btn-info' value='update task'>
+        </form>
+        </div>
+      <!--  -->
+
+      <!-- LIST FORMS -->
+<div class='form-group'>
+      <form id='create-list'>
+        <input name='list[name]'class='form-control' type='text' placeholder='list name'>
+        <textarea name='list[description]' class='form-control' type='text'placeholder='description'></textarea>
+        <input name='tasks[text]'class='form-control' type='text' placeholder='enter task'>
+        <button type='submit' class='btn btn-info' value='create list'>
+        </form>
+      </div>
+      <div class='form-group'>
+            <form id='delete-list'>
+               <input type='text' name='list[_id]' class='form-control' placeholder='enter list id'>
+                <button type='submit' class='btn btn-info' value='delete list'>
+            </form>
+          </div>
+          <div class='form-group'>
+                <form id='update-list'>
+                    <input type='text' name='list[_id]' class='form-control' placeholder='enter list id'>
+                    <input type='text' name='list[name]' class='form-control' placeholder='enter new name for list'>
+                    <input type='text' name='list[description]' class='form-control' placeholder='enter updated description'>
+                    <input type= 'text' name= 'tasks[text]' class='form-control' placeholder='update task'>
+                    <input type= 'date' name= 'tasks[date]' class='form-control' placeholder='update task'>
+                    <button type='submit' class='btn btn-info' value='update list'>
+                    </form>
+                    </div>
+
+<div class='form-group'>
+                    <form class="form-inline my-2 my-lg-0" id='show-list'>
+                      <input name='list[_id]' type='text' class='form-control' placeholder='enter list id'  aria-label="Search">
+                      <input class="btn btn-outline-success my-2 my-sm-0" type='submit' class='form-control' value='search' placeholder="search">
+                  </form>
+                  </div>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+    </body>
+</html>
