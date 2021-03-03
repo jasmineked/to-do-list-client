@@ -41,8 +41,8 @@ const onCompleteTask = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.update(data)
-    .then(ui.onIndexSuccess)
-    .catch(ui.onIndexFailure)
+    .then(ui.onCompleteTaskSuccess)
+    .catch(ui.onCompleteTaskFailure)
 }
 
 const onCreateTask = function (event) {
